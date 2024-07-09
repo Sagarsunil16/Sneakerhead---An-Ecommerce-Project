@@ -1,0 +1,417 @@
+<%- include('../partials/adminheader.ejs') %>
+
+    <style>
+        .selected-image {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        .delete-button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            text-align: center;
+            line-height: 20px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        #selected_images_container div {
+            position: relative;
+            display: inline-block;
+        }
+    </style>
+
+    <main class="main-wrap">
+        <header class="main-header navbar">
+            <div class="col-search">
+                <!-- <form class="searchform">
+                    <div class="input-group">
+                        <input list="search_terms" type="text" class="form-control" placeholder="Search term">
+                        <button class="btn btn-light bg" type="button"> <i class="material-icons md-search"></i></button>
+                    </div>
+                    <datalist id="search_terms">
+                        <option value="Products">
+                        <option value="New orders">
+                        <option value="Apple iphone">
+                        <option value="Ahmed Hassan">
+                    </datalist>
+                </form> -->
+            </div>
+            <div class="col-nav">
+                <button class="btn btn-icon btn-mobile me-auto" data-trigger="#offcanvas_aside"> <i class="material-icons md-apps"></i> </button>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link btn-icon" href="#">
+                            <i class="material-icons md-notifications animation-shake"></i>
+                            <span class="badge rounded-pill">3</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-icon darkmode" href="#"> <i class="material-icons md-nights_stay"></i> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="requestfullscreen nav-link btn-icon"><i class="material-icons md-cast"></i></a>
+                    </li>
+                    <li class="dropdown nav-item">
+                        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#" id="dropdownLanguage" aria-expanded="false"><i class="material-icons md-public"></i></a>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownLanguage">
+                            <a class="dropdown-item text-brand" href="#"><img src="adminassets/imgs/theme/flag-us.png" alt="English">English</a>
+                            <a class="dropdown-item" href="#"><img src="adminassets/imgs/theme/flag-fr.png" alt="Français">Français</a>
+                            <a class="dropdown-item" href="#"><img src="adminassets/imgs/theme/flag-jp.png" alt="Français">日本語</a>
+                            <a class="dropdown-item" href="#"><img src="adminassets/imgs/theme/flag-cn.png" alt="Français">中国人</a>
+                        </div>
+                    </li>
+                    <li class="dropdown nav-item">
+                        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#" id="dropdownAccount" aria-expanded="false"> <img class="img-xs rounded-circle" src="adminassets/imgs/people/avatar2.jpg" alt="User"></a>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownAccount">
+                            <a class="dropdown-item" href="#"><i class="material-icons md-perm_identity"></i>Edit Profile</a>
+                            <a class="dropdown-item" href="#"><i class="material-icons md-settings"></i>Account Settings</a>
+                            <a class="dropdown-item" href="#"><i class="material-icons md-account_balance_wallet"></i>Wallet</a>
+                            <a class="dropdown-item" href="#"><i class="material-icons md-receipt"></i>Billing</a>
+                            <a class="dropdown-item" href="#"><i class="material-icons md-help_outline"></i>Help center</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-danger" href="/admin/logout"><i class="material-icons md-exit_to_app"></i>Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <section class="content-main">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h4>Product List and Add</h4>
+                        </div>
+                        <div class="card-body">
+                             <form method="post" action="" enctype="multipart/form-data" onsubmit="return validateForm()">
+                                <!-- General Information Section -->
+                                <div class="mb-4">
+                                    <label for="product_name" class="form-label">Name</label>
+                                    <input type="text" placeholder="Type product name here" class="form-control" name="name" id="product_name">
+                                    <p id="nameError" class="text-danger"></p> <!-- Placeholder for name error -->
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="product_brand" class="form-label">Brand</label>
+                                    <input type="text" placeholder="Type Brand name here" class="form-control" name="brand" id="product_brand">
+                                    <p id="brandError" class="text-danger"></p> <!-- Placeholder for brand error -->
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="product_description" class="form-label">Description</label>
+                                    <textarea placeholder="Type product description here" class="form-control" name="description" id="product_description" rows="4"></textarea>
+                                    <p id="descriptionError" class="text-danger"></p> <!-- Placeholder for description error -->
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="product_sizes" class="form-label">Sizes</label>
+                                    <div id="sizesContainer">
+                                        <input type="text" placeholder="Enter product size" class="form-control size-input" name="sizes[]" id="product_size">
+                                    </div>
+                                    <button type="button" onclick="addSizeInput()">Add Size</button>
+                                    <p id="sizeError" class="text-danger"></p> <!-- Placeholder for size error -->
+                                </div>
+                            
+                                <!-- Pricing Section -->
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="mb-4">
+                                            <label for="regular_price" class="form-label">Price</label>
+                                            <input placeholder="₹" type="text" class="form-control" name="price" id="regular_price">
+                                            <p id="priceError" class="text-danger"></p> <!-- Placeholder for price error -->
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="mb-4">
+                                            <label for="discount_price" class="form-label">Discount Price</label>
+                                            <input placeholder="₹" type="text" class="form-control" name="discountPrice" id="discount_price">
+                                            <p id="discountPriceError" class="text-danger"></p> <!-- Placeholder for discount price error -->
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="mb-4">
+                                            <label for="stock_count" class="form-label">Count of Stock</label>
+                                            <input type="number" placeholder="Qty" class="form-control" name="stock" id="stock_count">
+                                            <p id="stockError" class="text-danger"></p> <!-- Placeholder for stock error -->
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <!-- Category Section -->
+                                <div class="mb-4">
+                                        <% if(category.length > 0) {
+                                            for(let i=0; i<category.length; i++) { %>
+                                        <label class="mb-2 form-check form-check-inline" style="width: 45%;">
+                                            <input class="form-check-input" value="<%=category[i]._id%>" name="category" id="category_<%= i %>" type="radio">
+                                            <span class="form-check-label"> <%=category[i].name%> </span>
+                                        </label>
+                                        <%}}%>
+                                        <div id="categoryError" class="text-danger"></div> <!-- Placeholder for category error -->
+                                </div>
+                            
+                                <!-- Media Section for Images -->
+                                <div class="mb-4">
+                                    <div class="mb-4">
+                                    <label for="product_images" class="form-label">Images</label>
+                                    <input type="file" class="form-control" name="images" id="product_images" multiple>
+                                    <small class="form-text text-muted">You can select multiple images.</small>
+                                    <p id="imagesError" class="text-danger"></p> <!-- Placeholder for images error -->
+                                    
+                                </div>
+                                <div id="selected_images_container" style="display: flex; flex-wrap: wrap; gap: 10px;"></div>
+                                </div>
+                            
+                                <div class="mb-4">
+                                    <div id="mainError" class="text-danger"></div> <!-- Main error message placeholder -->
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
+                            
+                            
+                        </div>
+                    </div> <!-- card end// -->
+                </div>
+            </div>
+        </section> <!-- content-main end// -->
+        <footer class="main-footer font-xs">
+            <div class="row pb-30 pt-15">
+                <div class="col-sm-6">
+                    <script>
+                    document.write(new Date().getFullYear())
+                    </script> ©, Sneakerhead .
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-sm-end">
+                        All rights reserved
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src="adminassets/js/vendors/jquery-3.6.0.min.js"></script>
+    <script src="adminassets/js/vendors/bootstrap.bundle.min.js"></script>
+    <script src="adminassets/js/vendors/select2.min.js"></script>
+    <script src="adminassets/js/vendors/perfect-scrollbar.js"></script>
+    <script src="adminassets/js/vendors/jquery.fullscreen.min.js"></script>
+    <!-- Main Script -->
+    <script src="adminassets/js/main.js" type="text/javascript"></script>
+
+//     <script>
+//     // for preview of image
+// document.getElementById('product_images').addEventListener('change', function(event) {
+//     const container = document.getElementById('selected_images_container');
+//     container.innerHTML = ''; // Clear previous images
+
+//     const files = event.target.files;
+
+//     for (let i = 0; i < files.length; i++) {
+//         const file = files[i];
+//         const reader = new FileReader();
+
+//         reader.onload = function(event) {
+//             const imageElement = document.createElement('img');
+//             imageElement.src = event.target.result;
+//             imageElement.classList.add('selected-image');
+//             container.appendChild(imageElement);
+//         };
+
+//         reader.readAsDataURL(file);
+//     }
+// })
+
+
+
+
+// </script>
+
+<script>
+        document.getElementById('product_images').addEventListener('change', function(event) {
+            const container = document.getElementById('selected_images_container');
+            container.innerHTML = ''; // Clear previous images
+
+            const files = event.target.files;
+
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                const reader = new FileReader();
+
+                reader.onload = function(event) {
+                    const div = document.createElement('div');
+                    
+                    const imageElement = document.createElement('img');
+                    imageElement.src = event.target.result;
+                    imageElement.classList.add('selected-image');
+                    imageElement.onclick = () => openModal(event.target.result);
+
+                    const deleteButton = document.createElement('button');
+                    deleteButton.innerHTML = '&times;';
+                    deleteButton.classList.add('delete-button');
+                    deleteButton.onclick = () => {
+                        div.remove();
+                        if (!container.childElementCount) {
+                            document.getElementById('product_images').value = "";
+                        }
+                    };
+
+                    div.appendChild(imageElement);
+                    div.appendChild(deleteButton);
+                    container.appendChild(div);
+                };
+
+                reader.readAsDataURL(file);
+            }
+        });
+
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imagePreviewModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.style.display = 'block';
+            modalImg.src = imageSrc;
+            cropper = new Cropper(modalImg, {
+                aspectRatio: 1,
+                viewMode: 3,
+                autoCropArea: 1
+            });
+        }
+
+        function closeModal() {
+            document.getElementById('imagePreviewModal').style.display = 'none';
+            if (cropper) cropper.destroy();
+        }
+
+        document.getElementById('cropButton').addEventListener('click', () => {
+            const croppedImage = cropper.getCroppedCanvas().toDataURL();
+            console.log(croppedImage); // For demonstration
+            closeModal();
+        });
+    </script>
+
+
+    <script>
+        function addSizeInput() {
+    const sizesContainer = document.getElementById('sizesContainer');
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.placeholder = 'Enter product size';
+    input.className = 'form-control size-input';
+    input.name = 'sizes[]';
+    sizesContainer.appendChild(input);
+}
+        </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    const nameInput = document.getElementById('product_name');
+    const brandInput = document.getElementById('product_brand')
+    const descriptionInput = document.getElementById('product_description');
+    const sizeInput = document.getElementById('product_size')
+    const priceInput = document.getElementById('regular_price');
+    const discountPriceInput = document.getElementById('discount_price');
+    const stockInput = document.getElementById('stock_count');
+    const imagesInput = document.getElementById('product_images');
+    
+    // Removed the brandInput since it's not part of your form
+    nameInput.addEventListener('blur', () => validateInput('product_name', /^[A-Za-z0-9\s]{0,99}$/, 'nameError', 'Product Name'));
+
+    brandInput.addEventListener('blur', () => validateInput('product_brand', /^[A-Za-z0-9\s]{0,99}$/, 'brandError', 'Product brand'))
+
+    descriptionInput.addEventListener('blur', () => validateInput('product_description', /^\s*[A-Z][\s\S]{13,}$/, 'descriptionError', 'Description'));
+    // Adjusted the regex for price and discountPrice to your requirements
+    priceInput.addEventListener('blur', () => validateInput('regular_price', /^\d+(\.\d{1,2})?$/, 'priceError', 'Price'));
+    discountPriceInput.addEventListener('blur', () => validateInput('discount_price', /^\d+(\.\d{1,2})?$/, 'discountPriceError', 'Discount Price'));
+    stockInput.addEventListener('blur', () => validateInput('stock_count', /^(100|[0-9]{1,2})$/, 'stockError', 'Stock'));
+
+    imagesInput.addEventListener('change', function(e) {
+        validateImages(e, 'imagesError');
+    });
+});
+
+function validateForm() {
+    const isValidName = validateInput('product_name', /^[A-Za-z0-9\s]{0,99}$/, 'nameError', 'Product Name');
+    const isValidBrand = validateInput('product_brand', /^[A-Za-z0-9\s]{0,99}$/, 'brandError', 'Product brand');
+    const isValidDescription = validateInput('product_description', /^\s*[A-Z][\s\S]{13,}$/, 'descriptionError', 'Description');
+
+    const isValidSize = validateInput
+
+    const isValidPrice = validateInput('regular_price', /^\d+(\.\d{1,2})?$/, 'priceError', 'Price');
+    const isValidDiscountPrice = validateInput('discount_price', /^\d+(\.\d{1,2})?$/, 'discountPriceError', 'Discount Price');
+    const isValidStock = validateInput('stock_count', /^(?:[0-9]|[1-9][0-9]|1[0-9]{2}|2[0-9]{2}|300)$/, 'stockError', 'Stock');
+    const isValidCategory = validateCategory(); // Validate category
+
+    if (!isValidName || !isValidBrand ||!isValidDescription || !isValidPrice || !isValidDiscountPrice || !isValidStock || !isValidCategory) {
+        document.getElementById('mainError').innerText = 'Cannot submit form. Please fix errors.';
+        return false;
+    }
+    return true;
+}
+
+function validateInput(inputId, pattern, errorId, errorMessage) {
+    const inputValue = document.getElementById(inputId).value.trim();
+    const errorElement = document.getElementById(errorId);
+
+    if (inputValue === '') {
+        errorElement.innerText = errorMessage + ' is required.';
+        return false;
+    } else if (!pattern.test(inputValue)) {
+        errorElement.innerText = 'Please enter a valid ' + errorMessage.toLowerCase() + '.';
+        return false;
+    } else {
+        errorElement.innerText = '';
+        return true;
+    }
+}
+
+function validateImages(e, errorId) {
+    var fileInput = e.target;
+    var maxFiles = 3;
+    var validExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp']; 
+
+    if (fileInput.files.length > maxFiles) {
+        alert(`You can only upload a maximum of ${maxFiles} files.`);
+        fileInput.value = '';
+        document.getElementById(errorId).textContent = `You can only upload a maximum of ${maxFiles} files.`;
+        return; 
+    }
+
+    for (var i = 0; i < fileInput.files.length; i++) {
+        var file = fileInput.files[i];
+        var extension = file.name.split('.').pop().toLowerCase();
+        if (!validExtensions.includes(extension)) {
+            alert('Please upload only image files (jpg, jpeg, png, gif, webp).');
+            fileInput.value = '';
+            document.getElementById(errorId).textContent = 'Please upload only image files (jpg, jpeg, png, gif, webp).';
+            return; 
+        }
+    }
+
+    document.getElementById(errorId).textContent = '';
+}
+
+function validateCategory() {
+    const categoryInputs = document.querySelectorAll('input[name="category"]:checked');
+    const categoryError = document.getElementById('categoryError');
+
+    if (categoryInputs.length === 0) {
+        categoryError.innerText = 'Please select at least one category.';
+        return false;
+    } else {
+        categoryError.innerText = '';
+        return true;
+    }
+}
+
+    </script>
+    
+        
+</body>
+
+</html>

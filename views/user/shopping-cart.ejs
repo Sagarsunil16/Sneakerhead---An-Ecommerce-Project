@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Male_Fashion Template">
+    <meta name="keywords" content="Male_Fashion, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sneakerhead</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        .coupon-content {
+            display: none;
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+    <style>
+        
+
+        .coupon .kanan {
+    border-left: 1px dashed #ddd;
+    width: 40% !important;
+    position:relative;
+}
+
+.coupon .kanan .info::after, .coupon .kanan .info::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #dedede;
+    border-radius: 100%;
+}
+.coupon .kanan .info::before {
+    top: -10px;
+    left: -10px;
+}
+
+.coupon .kanan .info::after {
+    bottom: -10px;
+    left: -10px;
+}
+.coupon .time {
+    font-size: 1.6rem;
+}
+
+    </style>
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__option">
+            <div class="offcanvas__links">
+                <% if (typeof user !== 'undefined') { %>
+                    <a href="/user/profile">Profile</a>
+                    <a href="/user/logout">Logout</a>
+                <% } else { %>
+                    <a href="/user/login">Sign in</a>
+                   
+                <% } %> 
+            </div>
+            <div class="offcanvas__top__hover">
+                <span>Usd <i class="arrow_carrot-down"></i></span>
+                <ul>
+                    <li>USD</li>
+                    <li>EUR</li>
+                    <li>USD</li>
+                </ul>
+            </div>
+        </div>
+        <div class="offcanvas__nav__option">
+            <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
+            <a href="#"><img src="img/icon/heart.png" alt=""></a>
+            <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+            <div class="price"> </div>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+        <div class="offcanvas__text">
+            <p>Free shipping, 30-day return or refund guarantee.</p>
+        </div>
+    </div>
+    <!-- Offcanvas Menu End -->
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-7">
+                        <div class="header__top__left">
+                            <p>Free shipping, 30-day return or refund guarantee.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-5">
+                        <div class="header__top__right">
+                            <div class="header__top__links">
+                                <% if (typeof user !== 'undefined') { %>
+                                    <a href="/user/profile">Profile</a>
+                                    <a href="/user/logout">logout</a>
+                                <% } else { %>
+                                    <a href="/user/login">Sign in</a>
+                                    <a href="#">FAQs</a>
+                                <% } %>
+                            </div>
+                            <div class="header__top__hover">
+                                <span>Usd <i class="arrow_carrot-down"></i></span>
+                                <ul>
+                                    <li>USD</li>
+                                    <li>EUR</li>
+                                    <li>USD</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__logo">
+                        <a href="/user/index"><img src="img/logo2.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <nav class="header__menu mobile-menu">
+                        <ul>
+                            <li class="active"><a href="/user/index">Home</a></li>
+                            <li><a href="/user/shop">Shop</a></li>
+                            
+                            
+                            <li><a href="/user/contact">Contacts</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__nav__option">
+                        <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
+                        <a href="/user/wishlist"><img src="img/icon/heart.png" alt=""></a>
+                        <a href="/user/cart"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+                        <div class="price"> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="canvas__open"><i class="fa fa-bars"></i></div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__text">
+                        <h4>Shopping Cart</h4>
+                        <div class="breadcrumb__links">
+                            <a href="/user/index">Home</a>
+                            <a href="/user/shop">Shop</a>
+                            <span>Shopping Cart</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container my-1">
+        <button class="btn btn-danger" id="toggleButton">&#9660; Show Coupon</button>
+        <div class="overlay" id="overlay"></div>
+        <div id="couponDiv" class="coupon-content">
+        <% for(let i =0;i<coupon.length;i++) {%> 
+            <div class="row">
+                <div class="col-12">
+                    <div class="coupon bg-white rounded mb-3 d-flex justify-content-between">
+                        <div class="kiri p-3">
+                            <div class="icon-container">
+                                <div class="icon-container_box">
+                                     <img src="data:image/png;base64,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" width="85" alt="totoprayogo.com" class="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tengah py-3 d-flex w-100 justify-content-start">
+                            <div>
+                                <span class="badge badge-success">Valid</span>
+                                <h3 class="lead"><%=coupon[i].code %></h3>
+                                <p class="text-muted mb-0"><%=coupon[i].description %></p>
+                            </div>
+                        </div>
+                        <div class="kanan">
+                            <div class="info m-3 d-flex align-items-center">
+                                <div class="w-100">
+                                    <div class="block">
+                                        <span class="time font-weight-light">
+                                            <span><%= coupon[i].maxUsers %> left</span>
+                                        </span>
+                                    </div>
+                                    <button class="btn btn-danger" id="copyButton" onclick=""> COPY</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%}%>
+        </div>
+    </div>
+    <!-- Breadcrumb Section End -->
+    
+    <!-- Shopping Cart Section Begin -->
+    <section class="shopping-cart spad" style="margin-top: -50px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="shopping__cart__table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% if (cart && cart.items && cart.items.length > 0) { %>
+                                    <% cart.items.forEach(item => { %> 
+                                        <tr>
+                                            <td class="product__cart__item">
+                                                <div class="product__cart__item__pic">
+                                                    <img src="/uploads/ProductImages/<%= item.productId.images[0] %>" alt="" style="width: 100px; height: auto;">
+                                                </div>
+                                                <div class="product__cart__item__text">
+                                                    <h6><%= item.productId.name %></h6>
+                                                    <h5>Rs <%= item.productId.discountPrice %></h5>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="detail-qty radius m-auto">
+                                                    <button onclick="changeQuantity('increase', '<%= item.productId._id %>')">+</button>
+                                                    <span class="qty-val me-3" id="qty-<%= item.productId._id %>"><%= item.quantity %></span>
+                                                    <button onclick="changeQuantity('decrease', '<%= item.productId._id %>')">-</button>
+                                                </div>
+                                            </td>
+                                            <td class="cart__price">Rs <%= item.price.toFixed(2) %></td>
+                                            <td class="cart__close"><button type="button" onclick="removeProductCart('<%= item.productId._id%>')"><i class="fa fa-close"></i></button></td>
+                                        </tr>
+                                    <% }); %>
+                                <% } else { %>
+                                    <tr>
+                                        <td colspan="4">Your cart is empty</td>
+                                    </tr>
+                                <% } %>
+                                
+                                 <!-- <tr>
+                                     <td class="product__cart__item">
+                                         <div class="product__cart__item__pic">
+                                             <img src="img/shopping-cart/cart-2.jpg" alt="">
+                                         </div>
+                                         <div class="product__cart__item__text">
+                                             <h6>Diagonal Textured Cap</h6>
+                                             <h5>$98.49</h5>
+                                         </div>
+                                    </td>
+                                     <td class="quantity__item">
+                                         <div class="quantity">
+                                             <div class="pro-qty-2">
+                                        <input type="text" value="1">
+                                         </div>
+                                     </div>
+                                 </td>
+                                 <td class="cart__price">$ 32.50</td>
+                                 <td class="cart__close"><i class="fa fa-close"></i></td>
+                             </tr>
+                             <tr>
+                                 <td class="product__cart__item">
+                                     <div class="product__cart__item__pic">
+                                         <img src="img/shopping-cart/cart-3.jpg" alt="">
+                                     </div>
+                                     <div class="product__cart__item__text">
+                                         <h6>Basic Flowing Scarf</h6>
+                                         <h5>$98.49</h5>
+                                     </div>
+                                 </td>
+                                 <td class="quantity__item">
+                                     <div class="quantity">
+                                         <div class="pro-qty-2">
+                                             <input type="text" value="1">
+                                         </div>
+                                     </div>
+                                 </td>
+                                 <td class="cart__price">$ 47.00</td>
+                                 <td class="cart__close"><i class="fa fa-close"></i></td>
+                             </tr>
+                             <tr>
+                                 <td class="product__cart__item">
+                                     <div class="product__cart__item__pic">
+                                         <img src="img/shopping-cart/cart-4.jpg" alt="">
+                                     </div>
+                                     <div class="product__cart__item__text">
+                                         <h6>Basic Flowing Scarf</h6>
+                                         <h5>$98.49</h5>
+                                     </div>
+                             </td>
+                                 <td class="quantity__item">
+                                 <div class="quantity">
+                                         <div class="pro-qty-2">
+                                             <input type="text" value="1">
+                                         </div>
+                                         </div>
+                                     </td>
+                                     <td class="cart__price">$ 30.00</td>
+                                     <td class="cart__close"><i class="fa fa-close"></i></td>
+                                 </tr>  -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="continue__btn">
+                                <a href="/user/shop">Continue Shopping</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="continue__btn update__btn">
+                                <a href="/user/cart"><i class="fa fa-spinner"></i> Update cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="cart__discount">
+                        <h6>Discount codes</h6>
+                        <form id="couponForm">
+                            <td class="cart__close">
+                               
+                                </td>
+                            <input type="text" id="couponCode" value="<%=cart.coupon%>">
+                            <button type="submit">Apply</button> 
+                        </form>
+                        <i class="fa fa-close" onclick="removeCoupon('<%=cart.coupon%>')"></i>
+                    </div>
+                    <div class="cart__total">
+                        <h6>Cart total</h6>
+                        <ul>
+                            <% if(cart && cart.items && cart.items.length > 0){ %>
+                            <li>Subtotal <span>Rs <%= cart.billTotal.toFixed(2) %></span></li>
+                            <li>Shipping <span> Shipping Free</span></li>
+                            <li>Total <span>Rs <%= cart.billTotal.toFixed(2) %></span></li>
+                            <%} else {%>
+                                <p class="cart_amount" id="carttotal2">Rs.0.00</p>
+                            <% } %>
+                            
+                        </ul>
+                        <a href="/user/checkout" class="primary-btn">Proceed to checkout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        
+        
+
+        
+    </section>
+    <!-- Shopping Cart Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__logo">
+                            <a href="#"><img src="img/logo2.png" alt=""></a>
+                        </div>
+                        <p>The customer is at the heart of our unique business model, which includes design.</p>
+                        <a href="#"><img src="img/payment.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Shopping</h6>
+                        <ul>
+                            <li><a href="#">Clothing Store</a></li>
+                            <li><a href="#">Trending Shoes</a></li>
+                            <li><a href="#">Accessories</a></li>
+                            <li><a href="#">Sale</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Shopping</h6>
+                        <ul>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Payment Methods</a></li>
+                            <li><a href="#">Delivary</a></li>
+                            <li><a href="#">Return & Exchanges</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>NewLetter</h6>
+                        <div class="footer__newslatter">
+                            <p>Be the first to know about new arrivals, look books, sales & promos!</p>
+                            <form action="#">
+                                <input type="text" placeholder="Your email">
+                                <button type="submit"><span class="icon_mail_alt"></span></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="footer__copyright__text">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <p>Copyright ©
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script>2020
+                            All rights reserved | This template is made with <i class="fa fa-heart-o"
+                            aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        </p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </footer>
+    
+    <!-- Footer Section End -->
+
+    <!-- Search Begin -->
+
+    <!-- Start Modal Add cart -->
+    <div class="modal fade" id="modalAddcart" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col text-right">
+                                <button type="button" class="close modal-close" data-bs-dismiss="modal"
+                                    aria-label="Close">
+                                    <span aria-hidden="true"> <i class="fa fa-times"></i></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-7">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="modal-add-cart-product-img">
+                                            <img class="img-fluid"
+                                                src="assets/images/product/default/home-1/default-1.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="modal-add-cart-info"><i class="fa fa-check-square"></i>Added to cart
+                                            successfully!</div>
+                                        <div class="modal-add-cart-product-cart-buttons">
+                                            <a href="cart.html">View Cart</a>
+                                            <a href="checkout.html">Checkout</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5 modal-border">
+                                <ul class="modal-add-cart-product-shipping-info">
+                                    <li> <strong><i class="icon-shopping-cart"></i> There Are 5 Items In Your
+                                            Cart.</strong></li>
+                                    <li> <strong>TOTAL PRICE: </strong> <span>$187.00</span></li>
+                                    <li class="modal-continue-button"><a href="#" data-bs-dismiss="modal">CONTINUE
+                                            SHOPPING</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End Modal Add cart -->
+
+    <!-- Start Modal Quickview cart -->
+    <div class="modal fade" id="modalQuickview" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col text-right">
+                                <button type="button" class="close modal-close" data-bs-dismiss="modal"
+                                    aria-label="Close">
+                                    <span aria-hidden="true"> <i class="fa fa-times"></i></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="product-details-gallery-area mb-7">
+                                    <!-- Start Large Image -->
+                                    <div class="product-large-image modal-product-image-large swiper-container">
+                                        <div class="swiper-wrapper">
+                                            <div class="product-image-large-image swiper-slide img-responsive">
+                                                <img src="assets/images/product/default/home-1/default-1.jpg" alt="">
+                                            </div>
+                                            <div class="product-image-large-image swiper-slide img-responsive">
+                                                <img src="assets/images/product/default/home-1/default-2.jpg" alt="">
+                                            </div>
+                                            <div class="product-image-large-image swiper-slide img-responsive">
+                                                <img src="assets/images/product/default/home-1/default-3.jpg" alt="">
+                                            </div>
+                                            <div class="product-image-large-image swiper-slide img-responsive">
+                                                <img src="assets/images/product/default/home-1/default-4.jpg" alt="">
+                                            </div>
+                                            <div class="product-image-large-image swiper-slide img-responsive">
+                                                <img src="assets/images/product/default/home-1/default-5.jpg" alt="">
+                                            </div>
+                                            <div class="product-image-large-image swiper-slide img-responsive">
+                                                <img src="assets/images/product/default/home-1/default-6.jpg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Large Image -->
+                                    <!-- Start Thumbnail Image -->
+                                    <div
+                                        class="product-image-thumb modal-product-image-thumb swiper-container pos-relative mt-5">
+                                        <div class="swiper-wrapper">
+                                            <div class="product-image-thumb-single swiper-slide">
+                                                <img class="img-fluid"
+                                                    src="assets/images/product/default/home-1/default-1.jpg" alt="">
+                                            </div>
+                                            <div class="product-image-thumb-single swiper-slide">
+                                                <img class="img-fluid"
+                                                    src="assets/images/product/default/home-1/default-2.jpg" alt="">
+                                            </div>
+                                            <div class="product-image-thumb-single swiper-slide">
+                                                <img class="img-fluid"
+                                                    src="assets/images/product/default/home-1/default-3.jpg" alt="">
+                                            </div>
+                                            <div class="product-image-thumb-single swiper-slide">
+                                                <img class="img-fluid"
+                                                    src="assets/images/product/default/home-1/default-4.jpg" alt="">
+                                            </div>
+                                            <div class="product-image-thumb-single swiper-slide">
+                                                <img class="img-fluid"
+                                                    src="assets/images/product/default/home-1/default-5.jpg" alt="">
+                                            </div>
+                                            <div class="product-image-thumb-single swiper-slide">
+                                                <img class="img-fluid"
+                                                    src="assets/images/product/default/home-1/default-6.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <!-- Add Arrows -->
+                                        <div class="gallery-thumb-arrow swiper-button-next"></div>
+                                        <div class="gallery-thumb-arrow swiper-button-prev"></div>
+                                    </div>
+                                    <!-- End Thumbnail Image -->
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="modal-product-details-content-area">
+                                    <!-- Start  Product Details Text Area-->
+                                    <div class="product-details-text">
+                                        <h4 class="title">Nonstick Dishwasher PFOA</h4>
+                                        <div class="price"><del>$70.00</del>$80.00</div>
+                                    </div> <!-- End  Product Details Text Area-->
+                                    <!-- Start Product Variable Area -->
+                                    <div class="product-details-variable">
+                                        <!-- Product Variable Single Item -->
+                                        <div class="variable-single-item">
+                                            <span>Color</span>
+                                            <div class="product-variable-color">
+                                                <label for="modal-product-color-red">
+                                                    <input name="modal-product-color" id="modal-product-color-red"
+                                                        class="color-select" type="radio" checked>
+                                                    <span class="product-color-red"></span>
+                                                </label>
+                                                <label for="modal-product-color-tomato">
+                                                    <input name="modal-product-color" id="modal-product-color-tomato"
+                                                        class="color-select" type="radio">
+                                                    <span class="product-color-tomato"></span>
+                                                </label>
+                                                <label for="modal-product-color-green">
+                                                    <input name="modal-product-color" id="modal-product-color-green"
+                                                        class="color-select" type="radio">
+                                                    <span class="product-color-green"></span>
+                                                </label>
+                                                <label for="modal-product-color-light-green">
+                                                    <input name="modal-product-color"
+                                                        id="modal-product-color-light-green" class="color-select"
+                                                        type="radio">
+                                                    <span class="product-color-light-green"></span>
+                                                </label>
+                                                <label for="modal-product-color-blue">
+                                                    <input name="modal-product-color" id="modal-product-color-blue"
+                                                        class="color-select" type="radio">
+                                                    <span class="product-color-blue"></span>
+                                                </label>
+                                                <label for="modal-product-color-light-blue">
+                                                    <input name="modal-product-color"
+                                                        id="modal-product-color-light-blue" class="color-select"
+                                                        type="radio">
+                                                    <span class="product-color-light-blue"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <!-- Product Variable Single Item -->
+                                        <div class="d-flex align-items-center flex-wrap">
+                                            <div class="variable-single-item ">
+                                                <span>Quantity</span>
+                                                <div class="product-variable-quantity">
+                                                    <input min="1" max="100" value="1" type="number">
+                                                </div>
+                                            </div>
+
+                                            <div class="product-add-to-cart-btn">
+                                                <a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart">Add To
+                                                    Cart</a>
+                                            </div>
+                                        </div>
+                                    </div> <!-- End Product Variable Area -->
+                                    <div class="modal-product-about-text">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia iste
+                                            laborum ad impedit pariatur esse optio tempora sint ullam autem deleniti nam
+                                            in quos qui nemo ipsum numquam, reiciendis maiores quidem aperiam, rerum vel
+                                            recusandae</p>
+                                    </div>
+                                    <!-- Start  Product Details Social Area-->
+                                    <div class="modal-product-details-social">
+                                        <span class="title">SHARE THIS PRODUCT</span>
+                                        <ul>
+                                            <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
+                                            <li><a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+                                            </li>
+                                            <li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+                                        </ul>
+
+                                    </div> <!-- End  Product Details Social Area-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End Modal Quickview cart -->
+
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search End -->
+
+    <script>
+        document.getElementById('copyButton').addEventListener('click', function() {
+            var couponText = "<%=coupon.code%>";
+            navigator.clipboard.writeText(couponText).then(function() {
+               Swal.fire({
+                title:"Success",
+                text:"Code copied to the Clipboard",
+                icon:"success",
+                confirmButtonText:"Ok"
+               }).then(()=>{
+                window.location.reload()
+               })
+            }, function(err) {
+                console.error('Could not copy text: ', err);
+            });
+        });
+        document.getElementById('couponForm').onsubmit= function(event){
+            event.preventDefault();
+            applyCoupon()
+        }
+
+        async function applyCoupon(){
+            try{
+            let couponCode = document.getElementById('couponCode').value;
+            console.log(couponCode)
+
+            let response = await fetch("/user/applycoupon",{
+                method:"POST",
+                headers:{
+                    'Content-Type':'application/json',
+                },
+                body:JSON.stringify({
+                    couponCode
+                })
+            }) 
+            let responseData = await response.json();
+            if(response.status===200){
+            swal.fire({
+                        title:"Sucess",
+                        text:responseData.message,
+                        icon:"Success",
+                        confirmButtonText:"OK"
+                    }).then(()=>{
+                        window.location.reload()
+                    })
+                }
+                else{
+                    swal.fire({
+                        title:"error",
+                        text:responseData.message,
+                        icon:"error",
+                        confirmButtonText:"OK"
+                    })
+                }
+            }catch(error){
+                console.error("Error applying coupon:", error);
+        swal.fire({
+            title: "Error",
+            text: error.message,
+            icon: "error",
+            confirmButtonText: "OK"
+        });
+    }
+}
+
+    async function removeCoupon(coupon){
+        try{
+            console.log(coupon)
+        let res = await fetch("/user/removecoupon",{
+            method:'POST',
+            headers:{
+                "Content-Type":'application/json'
+            },
+            body:JSON.stringify({coupon})
+        })
+        console.log(res,"ressss")
+        let responseData = await res.json()
+        console.log(responseData,"responseData")
+        if(res.status===200){
+            swal.fire({
+                        title:"Sucess",
+                        text:responseData.message,
+                        icon:"Success",
+                        confirmButtonText:"OK"
+                    }).then(()=>{
+                        window.location.reload()
+                    })
+                }
+                else{
+                    swal.fire({
+                        title:"error",
+                        text:responseData.message,
+                        icon:"error",
+                        confirmButtonText:"OK"
+                    })
+                }
+    }catch{
+        console.error("Error applying coupon:", error);
+        swal.fire({
+            title: "Error",
+            text: error.message,
+            icon: "error",
+            confirmButtonText: "OK"
+        });
+    }
+}
+        
+    </script>
+    <script>
+       function changeQuantity(action, productId) {
+    console.log("changeQuantity function called with productId:", productId); // Check if function is being called and productId is passed
+
+    if (!productId) {
+        console.error('Product ID is undefined.');
+        return; // Exit the function if productId is not provided
+    }
+
+    const url = action === 'increase' ? '/user/increaseQty' : '/user/decreaseQty';
+    const data = { productId };
+
+    console.log("Sending request to:", url); // Log the URL before making the fetch request
+
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Response message:", data.message); // Log the response message from the server
+
+        // Show sweet alert based on the response message
+        if (data.message === 'Maximum quantity reached') {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Maximum Quantity Reached',
+                text: 'You have reached the maximum quantity allowed per user.',
+                confirmButtonText: 'OK'
+            });
+        } else if (data.message === 'Stock limit exceeded') {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Stock Limit Exceeded',
+                text: 'The quantity you are trying to add exceeds the available stock.',
+                confirmButtonText: 'OK'
+            });
+        } else if (data.message === 'Minimum quantity reached') {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Minimum Quantity Reached',
+                text: 'You have reached the minimum quantity allowed per user.',
+                confirmButtonText: 'OK'
+            });
+        } else {
+            // Refresh cart display logic here
+            location.reload(); // Simple way to refresh the page and see the updated cart
+        }
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+}
+
+        </script>
+
+        <!-- delete product -->
+
+        <script>
+            function removeProductCart(productId) {
+        swal.fire({
+            title: "Are you sure?",
+            text: "Do you want to remove this product from your cart?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, remove it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch('/user/deleteItem', {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        productId
+                    })
+                })
+                .then((response) => {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        throw new Error('Network response was not ok.');
+                    }
+                })
+                .then((data) => {
+                    if (data.success) {
+                        // Product removed successfully
+                        swal.fire({
+                            title: 'Product Removed',
+                            text: '',
+                            icon: "success",
+                            type: 'success',
+                            timer: 1500,
+                            timerProgressBar: true,
+                        }).then(() => {
+                          location.reload(); // Reload the page after successful removal
+                        });
+                    } 
+                    //else {
+                    //     // Handle deletion failure
+                    //     swal.fire('Error Deleting product', data.message, 'error');
+                    // }
+                })
+                .catch((error) => {
+                    // Handle errors during fetch
+                    swal.fire('Error', 'An error occurred while removing the product.', 'error');
+                    console.error('Fetch Error:', error);
+                });
+            }
+        });
+    }
+        </script>
+
+<% if (!cart || cart.items.length === 0) { %>
+    <script>
+        Swal.fire({
+            title: 'Cart Empty!',
+            text: 'Your cart is currently empty.',
+            icon: 'info',
+            confirmButtonText: 'Go Shopping'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Redirect them to the shop page
+                window.location.href = '/shop';
+            }
+        });
+    </script>
+<% } %>
+<script>
+    document.getElementById('toggleButton').addEventListener('click', function() {
+        var couponDiv = document.getElementById('couponDiv');
+        var overlay = document.getElementById('overlay');
+        if (couponDiv.style.display === 'none' || couponDiv.style.display === '') {
+            couponDiv.style.display = 'block';
+            overlay.style.display = 'block';
+            this.innerHTML = '&#9650; Hide Coupon';
+        } else {
+            couponDiv.style.display = 'none';
+            overlay.style.display = 'none';
+            this.innerHTML = '&#9660; Show Coupon';
+        }
+    });
+
+    document.getElementById('overlay').addEventListener('click', function() {
+        var couponDiv = document.getElementById('couponDiv');
+        var toggleButton = document.getElementById('toggleButton');
+        couponDiv.style.display = 'none';
+        this.style.display = 'none';
+        toggleButton.innerHTML = '&#9660; Show Coupon';
+    });
+</script>
+        
+        
+        
+    <!-- Js Plugins -->
+    <script src="assets/js/vendor/vendor.min.js"></script>
+    <script src="assets/js/plugins/plugins.min.js"></script>
+
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

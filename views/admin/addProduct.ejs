@@ -1,0 +1,458 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sneakerhead Dashboard</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="adminassets/imgs/theme/favicon.svg">
+    <!-- Template CSS -->
+    <link href="adminassets/css/main.css" rel="stylesheet" type="text/css" />
+    
+    <style>
+        /* Search container */
+    .page-pagination {
+    display: flex;
+    justify-content: center; /* Centers the div horizontally */
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 300px; /* Adjust as needed */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Search input */
+.search-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+/* Search button */
+.search-button {
+    /* background-color: #007bff; */
+    /* color: #fff; */
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Search button icon */
+.search-button i {
+    font-size: 18px;
+}
+
+/* Hover effect */
+/* .search-button:hover {
+    /* background-color: #a2bad3; */
+ 
+
+
+    </style>
+</head>
+
+<body>
+    <div class="screen-overlay"></div>
+    <aside class="navbar-aside" id="offcanvas_aside">
+        <div class="aside-top">
+            <a href="index.html" class="brand-wrap">
+                <img src="adminassets/imgs/logo2.png" class="logo" alt="Sneakerhead Dashboard">
+                <h4 style="color: black;">Sneakerhead</h4>
+            </a>
+            <div>
+                <button class="btn btn-icon btn-aside-minimize"> <i class="text-muted material-icons md-menu_open"></i> </button>
+            </div>
+        </div>
+        <nav>
+            <ul class="menu-aside">
+                <li class="menu-item">
+                    <a class="menu-link" href="/admin/home"> <!-- Placeholder link for Users -->
+                        <i class="icon material-icons md-perm_identity"></i>
+                        <span class="text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link" href="/admin/userlist"> <!-- Placeholder link for produts -->
+                        <i class="icon material-icons md-person"></i>
+                        <span class="text">Users</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link" href="/admin/category"> <!-- Placeholder link for Categories -->
+                        <i class="icon material-icons md-star"></i>
+                        <span class="text">Categories</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link" href="/admin/product"> <!-- Placeholder link for Products -->
+                        <i class="icon material-icons md-shopping_bag"></i>
+                        <span class="text">Products</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link" href="/admin/order"> <!-- Placeholder link for orders -->
+                        <i class="icon material-icons md-menu"></i>
+                        <span class="text">Orders</span>
+                    </a>
+                </li>
+
+                <li class="menu-item has-submenu">
+                    <a class="menu-link" href="page-transactions-1.html"> <i class="icon material-icons md-local_offer"></i>
+                        <span class="text">Offers</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="/admin/categoryOffer">Category offer</a>
+                        <a href="/admin/productoffer">Product offer</a>
+                    </div>
+                </li>
+                
+                <li class="menu-item">
+                    <a class="menu-link" href="/admin/coupon"> <!-- Placeholder link for orders -->
+                        <i class="icon material-icons md-apps"></i>
+                        <span class="text">Coupon</span>
+                    </a>
+                </li>
+                <!-- <li class="menu-item has-submenu">
+                    <a class="menu-link" href="page-transactions-1.html"> <i class="icon material-icons md-local_offer"></i>
+                        <span class="text">Offers</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="/admin/loadCategoryOffer">Category offer</a>
+                        <a href="/admin/loadProductOffer">Product offer</a>
+                    </div>
+                </li> -->
+                <li class="menu-item ">
+                    <a class="menu-link" href="/admin/salesreport"> <i class="icon material-icons md-assessment"></i>
+                        <span class="text">Sales Report</span>
+                    </a>
+                   
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link" href="/admin/logout"> <!-- Placeholder link for orders -->
+                        <i class="icon material-icons md-exit_to_app"></i>
+                        <span class="text">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <main class="main-wrap">
+        <header class="main-header navbar">
+            <div class="col-search">
+                <!-- <form class="searchform">
+                    <div class="input-group">
+                        <input list="search_terms" type="text" class="form-control" placeholder="Search term">
+                        <button class="btn btn-light bg" type="button"> <i class="material-icons md-search"></i></button>
+                    </div>
+                    <datalist id="search_terms">
+                        <option value="Products">
+                        <option value="New orders">
+                        <option value="Apple iphone">
+                        <option value="Ahmed Hassan">
+                    </datalist>
+                </form> -->
+            </div>
+            <div class="col-nav">
+                <button class="btn btn-icon btn-mobile me-auto" data-trigger="#offcanvas_aside"> <i class="material-icons md-apps"></i> </button>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link btn-icon" href="#">
+                            <i class="material-icons md-notifications animation-shake"></i>
+                            <span class="badge rounded-pill">3</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-icon darkmode" href="#"> <i class="material-icons md-nights_stay"></i> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="requestfullscreen nav-link btn-icon"><i class="material-icons md-cast"></i></a>
+                    </li>
+                    <li class="dropdown nav-item">
+                        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#" id="dropdownLanguage" aria-expanded="false"><i class="material-icons md-public"></i></a>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownLanguage">
+                            <a class="dropdown-item text-brand" href="#"><img src="adminassets/imgs/theme/flag-us.png" alt="English">English</a>
+                            <a class="dropdown-item" href="#"><img src="adminassets/imgs/theme/flag-fr.png" alt="Français">Français</a>
+                            <a class="dropdown-item" href="#"><img src="adminassets/imgs/theme/flag-jp.png" alt="Français">日本語</a>
+                            <a class="dropdown-item" href="#"><img src="adminassets/imgs/theme/flag-cn.png" alt="Français">中国人</a>
+                        </div>
+                    </li>
+                    <li class="dropdown nav-item">
+                        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#" id="dropdownAccount" aria-expanded="false"> <img class="img-xs rounded-circle" src="adminassets/imgs/people/avatar2.jpg" alt="User"></a>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownAccount">
+                            <a class="dropdown-item" href="#"><i class="material-icons md-perm_identity"></i>Edit Profile</a>
+                            <a class="dropdown-item" href="#"><i class="material-icons md-settings"></i>Account Settings</a>
+                            <a class="dropdown-item" href="#"><i class="material-icons md-account_balance_wallet"></i>Wallet</a>
+                            <a class="dropdown-item" href="#"><i class="material-icons md-receipt"></i>Billing</a>
+                            <a class="dropdown-item" href="#"><i class="material-icons md-help_outline"></i>Help center</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-danger" href="/admin/logout"><i class="material-icons md-exit_to_app"></i>Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <section class="content-main">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="card mb-4">
+                        <div class="card-header text-center"> <!-- Added text-center class -->
+                            <h4>Product List and Add</h4>
+                            <a href="/admin/Addproduct"><button class="btn btn-primary">Add Product</button></a>
+                            
+                        </div>               
+                        <div class="card-body">
+                           
+                            <div class="search-container">
+                                <form action="/admin/product" method="GET">
+                                    <!-- <input type="text" placeholder="Search..." name="q">
+                                    <button type="submit"><span class="icon_search"></span></button> -->
+                                    <input type="text" placeholder="Search..." name="items" class="search-input" >
+                                <button type="submit"  class="search-button"> <img src="/adminassets/imgs/search.png" alt=""></button>
+                                </form>
+                                
+                            </div>
+                            
+                            
+                            
+                        </div>
+                    </div> <!-- card end// -->
+                </div>
+                <div>
+                    <table class="table table-hover">
+                        <tr>
+                            <th>Name</th>
+                            <th>Brand</th>
+                            <th>Description</th>
+                            <th>Images</th>
+                            <th>sizes</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Discount Price</th>
+                            <th>Stock</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                        
+                        <% if(product.length > 0) {
+                            for(let i=0; i<product.length; i++) { %>
+                                <tr>
+                                    <td><%= product[i].name %></td>
+                                    <td><%= product[i].brand %></td>
+                                    <td><%= product[i].description %></td>
+                                    <td>
+                                        <% product[i].images.forEach(image => { %>
+                                            <img src="/uploads/ProductImages/<%= image %>" alt="" height="60px" width="60px">
+                                        <% }) %>
+                                    </td>
+                                    <td>
+                                        <% product[i].size.forEach((size, index) => { %>
+                                            <%= size %>
+                                            <% if (index < product[i].size.length - 1) { %>
+                                                ,
+                                            <% } %>
+                                        <% }) %>
+                                    </td>
+                                    <td><%= product[i].category.name %></td>
+                                    <td><%= product[i].price %></td>
+                                    <td><%= product[i].discountPrice %></td>
+                                    <td><%= product[i].countInStock %></td>
+                                    <td><%= product[i].is_deleted ? 'Inactive' : 'Active' %></td> 
+                                    <td>
+                                        <!-- Toggle button to change status -->
+                                        <a href="/admin/active?id=<%= product[i]._id %>&action=<%= product[i].is_deleted ? 'Inactive' : 'Active' %>" class="btn btn-primary">
+                                            <%= product[i].is_deleted ? 'Active' : 'Inactive' %>
+                                        </a>
+                                        <br><br>
+                                        <a href="/admin/editproduct?id=<%= product[i]._id %>" class="btn btn-primary">Edit</a>
+                                    </td>
+                                </tr>
+                            <% }
+                        } else { %>
+                            <tr>
+                                <td colspan="9">Product Not Found</td>
+                            </tr>
+                        <% } %>
+                    </table>
+                    
+                </div>
+            </div>
+        </section> <!-- content-main end// -->
+        <!-- pagination starts here -->
+<div class="page-pagination aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">
+    <ul class="pagination">
+        <% if (currentPage > 1) { %>
+            <li class="page-item">
+                <a class="page-link" href="/admin/product?page=<%= currentPage - 1 %>" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+        <% } %>
+        
+        <% for (let i = 1; i <= totalPages; i++) { %>
+            <li class="page-item">
+                <a class="page-link <% if (currentPage === i) { %> active <% } %>" href="/admin/product?page=<%= i %>"><%= i %></a>
+            </li>
+        <% } %>
+        
+        <% if (currentPage < totalPages) { %>
+            <li class="page-item">
+                <a class="page-link" href="/admin/product?page=<%= currentPage + 1 %>" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        <% } %>
+    </ul>
+</div>
+<!-- pagination ends -->
+<br><br>
+        <footer class="main-footer font-xs">
+            <div class="row pb-30 pt-15">
+                <div class="col-sm-6">
+                    <script>
+                    document.write(new Date().getFullYear())
+                    </script> ©, Sneakerhead .
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-sm-end">
+                        All rights reserved
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src="adminassets/js/vendors/jquery-3.6.0.min.js"></script>
+    <script src="adminassets/js/vendors/bootstrap.bundle.min.js"></script>
+    <script src="adminassets/js/vendors/select2.min.js"></script>
+    <script src="adminassets/js/vendors/perfect-scrollbar.js"></script>
+    <script src="adminassets/js/vendors/jquery.fullscreen.min.js"></script>
+    <!-- Main Script -->
+    <script src="adminassets/js/main.js" type="text/javascript"></script>
+
+    <script>
+        function addSizeInput() {
+    const sizesContainer = document.getElementById('sizesContainer');
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.placeholder = 'Enter product size';
+    input.className = 'form-control size-input';
+    input.name = 'sizes[]';
+    sizesContainer.appendChild(input);
+}
+        </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    const nameInput = document.getElementById('product_name');
+    const brandInput = document.getElementById('product_brand')
+    const descriptionInput = document.getElementById('product_description');
+    const priceInput = document.getElementById('regular_price');
+    const discountPriceInput = document.getElementById('discount_price');
+    const stockInput = document.getElementById('stock_count');
+    const imagesInput = document.getElementById('product_images');
+    
+    // Removed the brandInput since it's not part of your form
+    nameInput.addEventListener('blur', () => validateInput('product_name', /^[A-Za-z0-9\s]{0,99}$/, 'nameError', 'Product Name'));
+
+    brandInput.addEventListener('blur', () => validateInput('product_brand', /^[A-Za-z0-9\s]{0,99}$/, 'brandError', 'Product brand'))
+
+    descriptionInput.addEventListener('blur', () => validateInput('product_description', /^\s*[A-Z][\s\S]{13,}$/, 'descriptionError', 'Description'));
+    // Adjusted the regex for price and discountPrice to your requirements
+    priceInput.addEventListener('blur', () => validateInput('regular_price', /^\d+(\.\d{1,2})?$/, 'priceError', 'Price'));
+    discountPriceInput.addEventListener('blur', () => validateInput('discount_price', /^\d+(\.\d{1,2})?$/, 'discountPriceError', 'Discount Price'));
+    stockInput.addEventListener('blur', () => validateInput('stock_count', /^(100|[0-9]{1,2})$/, 'stockError', 'Stock'));
+
+    imagesInput.addEventListener('change', function(e) {
+        validateImages(e, 'imagesError');
+    });
+});
+
+function validateForm() {
+    const isValidName = validateInput('product_name', /^[A-Za-z0-9\s]{0,99}$/, 'nameError', 'Product Name');
+    const isValidBrand = validateInput('product_brand', /^[A-Za-z0-9\s]{0,99}$/, 'brandError', 'Product brand');
+    const isValidDescription = validateInput('product_description', /^\s*[A-Z][\s\S]{13,}$/, 'descriptionError', 'Description');
+    const isValidPrice = validateInput('regular_price', /^\d+(\.\d{1,2})?$/, 'priceError', 'Price');
+    const isValidDiscountPrice = validateInput('discount_price', /^\d+(\.\d{1,2})?$/, 'discountPriceError', 'Discount Price');
+    const isValidStock = validateInput('stock_count', /^(?:[0-9]|[1-9][0-9]|1[0-9]{2}|2[0-9]{2}|300)$/, 'stockError', 'Stock');
+    const isValidCategory = validateCategory(); // Validate category
+
+    if (!isValidName || !isValidBrand ||!isValidDescription || !isValidPrice || !isValidDiscountPrice || !isValidStock || !isValidCategory) {
+        document.getElementById('mainError').innerText = 'Cannot submit form. Please fix errors.';
+        return false;
+    }
+    return true;
+}
+
+function validateInput(inputId, pattern, errorId, errorMessage) {
+    const inputValue = document.getElementById(inputId).value.trim();
+    const errorElement = document.getElementById(errorId);
+
+    if (inputValue === '') {
+        errorElement.innerText = errorMessage + ' is required.';
+        return false;
+    } else if (!pattern.test(inputValue)) {
+        errorElement.innerText = 'Please enter a valid ' + errorMessage.toLowerCase() + '.';
+        return false;
+    } else {
+        errorElement.innerText = '';
+        return true;
+    }
+}
+
+function validateImages(e, errorId) {
+    var fileInput = e.target;
+    var maxFiles = 3;
+    var validExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp']; 
+
+    if (fileInput.files.length > maxFiles) {
+        alert(`You can only upload a maximum of ${maxFiles} files.`);
+        fileInput.value = '';
+        document.getElementById(errorId).textContent = `You can only upload a maximum of ${maxFiles} files.`;
+        return; 
+    }
+
+    for (var i = 0; i < fileInput.files.length; i++) {
+        var file = fileInput.files[i];
+        var extension = file.name.split('.').pop().toLowerCase();
+        if (!validExtensions.includes(extension)) {
+            alert('Please upload only image files (jpg, jpeg, png, gif, webp).');
+            fileInput.value = '';
+            document.getElementById(errorId).textContent = 'Please upload only image files (jpg, jpeg, png, gif, webp).';
+            return; 
+        }
+    }
+
+    document.getElementById(errorId).textContent = '';
+}
+
+function validateCategory() {
+    const categoryInputs = document.querySelectorAll('input[name="category"]:checked');
+    const categoryError = document.getElementById('categoryError');
+
+    if (categoryInputs.length === 0) {
+        categoryError.innerText = 'Please select at least one category.';
+        return false;
+    } else {
+        categoryError.innerText = '';
+        return true;
+    }
+}
+
+    </script>
+    
+        
+</body>
+
+</html>

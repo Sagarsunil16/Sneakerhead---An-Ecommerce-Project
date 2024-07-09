@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Male_Fashion Template">
+    <meta name="keywords" content="Male_Fashion, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        /* Add cursor pointer style to product items */
+        .product__item {
+            cursor: pointer;
+        }
+    </style>
+    <title>Male-Fashion | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    
+
+    <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+         
+        .one {
+            color: rgb(255, 0, 0);
+        }
+         
+        .two {
+            color: rgb(255, 106, 0);
+        }
+         
+        .three {
+            color: rgb(251, 255, 120);
+        }
+         
+        .four {
+            color: rgb(255, 255, 0);
+        }
+         
+        .five {
+            color: rgb(24, 159, 14);
+        }
+         
+        textarea {
+            width: 80%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+         
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+         
+        button:hover {
+            background-color: #0056b3;
+        }
+         
+        .reviews {
+            margin-top: 20px;
+            text-align: left;
+        }
+         
+        .review {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+         
+        .review p {
+            margin: 0;
+        }
+        
+        .card{position: relative;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;min-width: 0;word-wrap: break-word;background-color: #fff;background-clip: border-box;border: 1px solid rgba(0, 0, 0, 0.1);border-radius: 0.10rem}.card-header:first-child{border-radius: calc(0.37rem - 1px) calc(0.37rem - 1px) 0 0}.card-header{padding: 0.75rem 1.25rem;margin-bottom: 0;background-color: #fff;border-bottom: 1px solid rgba(0, 0, 0, 0.1)}.track{position: relative;background-color: #ddd;height: 7px;display: -webkit-box;display: -ms-flexbox;display: flex;margin-bottom: 60px;margin-top: 50px}.track .step{-webkit-box-flex: 1;-ms-flex-positive: 1;flex-grow: 1;width: 25%;margin-top: -18px;text-align: center;position: relative}.track .step.active:before{background: #FF5722}.track .step::before{height: 7px;position: absolute;content: "";width: 100%;left: 0;top: 18px}.track .step.active .icon{background: #ee5435;color: #fff}.track .icon{display: inline-block;width: 40px;height: 40px;line-height: 40px;position: relative;border-radius: 100%;background: #ddd}.track .step.active .text{font-weight: 400;color: #000}.track .text{display: block;margin-top: 7px}.itemside{position: relative;display: -webkit-box;display: -ms-flexbox;display: flex;width: 100%}.itemside .aside{position: relative;-ms-flex-negative: 0;flex-shrink: 0}.img-sm{width: 80px;height: 80px;padding: 7px}ul.row, ul.row-sm{list-style: none;padding: 0}.itemside .info{padding-left: 15px;padding-right: 7px}.itemside .title{display: block;margin-bottom: 5px;color: #212529}p{margin-top: 0;margin-bottom: 1rem}.btn-warning{color: #ffffff;background-color: #ee5435;border-color: #ee5435;border-radius: 1px}.btn-warning:hover{color: #ffffff;background-color: #ff2b00;border-color: #ff2b00;border-radius: 1px}
+        </style>
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__option">
+            <div class="offcanvas__links">
+                <% if (typeof user !== 'undefined') { %>
+                    <a href="/user/profile">Profile</a>
+                    <a href="/user/logout">Logout</a>
+                <% } else { %>
+                    <a href="/user/login">Sign in</a>
+                   
+                <% } %> 
+            </div>
+            <div class="offcanvas__top__hover">
+                <span>Usd <i class="arrow_carrot-down"></i></span>
+                <ul>
+                    <li>USD</li>
+                    <li>EUR</li>
+                    <li>USD</li>
+                </ul>
+            </div>
+        </div>
+        <div class="offcanvas__nav__option">
+            <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
+            <a href="#"><img src="img/icon/heart.png" alt=""></a>
+            <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+            <div class="price"> </div>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+        <div class="offcanvas__text">
+            <p>Free shipping, 30-day return or refund guarantee.</p>
+        </div>
+    </div>
+    <!-- Offcanvas Menu End -->
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-7">
+                        <div class="header__top__left">
+                            <p>Free shipping, 30-day return or refund guarantee.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-5">
+                        <div class="header__top__right">
+                            <div class="header__top__links">
+                                <% if (typeof user_id !== 'undefined') { %>
+                                    <a href="/user/profile">Profile</a>
+                                    <a href="/user/logout">logout</a>
+                                <% } else { %>
+                                    <a href="/user/login">Sign in</a>
+                                    <a href="#">FAQs</a>
+                                <% } %>
+                            </div>
+                            <div class="header__top__hover">
+                                <span>Usd <i class="arrow_carrot-down"></i></span>
+                                <ul>
+                                    <li>USD</li>
+                                    <li>EUR</li>
+                                    <li>USD</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__logo">
+                        <a href="/user/index"><img src="img/logo2.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <nav class="header__menu mobile-menu">
+                        <ul>
+                            <li class="active"><a href="/user/index">Home</a></li>
+                            <li><a href="/user/shop">Shop</a></li>
+                            
+                            
+                            <li><a href="/user/contact">Contacts</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__nav__option">
+                        <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
+                        <a href="/user/wishlist"><img src="img/icon/heart.png" alt=""></a>
+                        <a href="/user/cart"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+                        <div class="price"> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="canvas__open"><i class="fa fa-bars"></i></div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__text">
+                        <h4>Shop</h4>
+                        <div class="breadcrumb__links">
+                            <a href="/user/index">Home</a>
+                            <span>Shop</span>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+    <section class="shop spad">
+        <div class="container" style="margin-top:50px;margin-bottom: 50px">
+        <article class="card">
+            <header class="card-header">Order details </header>
+            <div class="card-body">
+                <% if(typeof order!=='undefined'){ %>
+                <h6>Order ID:<%=order.oId%></h6>
+                <br>
+                <h6>Order Date:<%= new Date(order.orderDate).toLocaleDateString()  %></h6>
+                <%if((order.paymentStatus==='Pending'&& order.status !=='Canceled')){%>
+                    <p class="text-danger">Payment : Pending</p>
+
+                    <label class="radio-default d-flex">
+                        <input type="radio" name="paymentOption" style="width: 15px;" id="razorpay" value="razorpay" required>
+                            <span>Online Payment</span>
+                            </label>
+                           <input type="hidden" id="id" value="<%=order._id%>">
+                           <input type="hidden" id="billTotal" value="<%=order.billTotal%>">
+                           
+                            <div class="order_button pt-3">
+                                <button class="btn btn-md btn-black-default-hover" id="proceedButton" type="button">continue to payment</button>
+                            </div>
+                            <br>
+                <%}%>
+                <article class="card">
+                    <div class="card-body row">
+                        <div class="col"> <strong>Estimated Delivery time:</strong> <br><% 
+                            var orderDate = new Date(order.orderDate);
+                            orderDate.setDate(orderDate.getDate() + 7);
+                            var modifiedDate = orderDate.toLocaleDateString();
+                            %> <%=modifiedDate %></div>
+                        <div class="col"> <strong>Shipping BY:</strong> <br> BLUEDART, | <i class="fa fa-phone"></i> +1598675986 </div>
+                        <div class="col"> <strong>Status:</strong> <br><%=order.status%></div>
+                        <div class="col"> <strong>Tracking #:</strong> <br> <%=order.oId%> </div>
+                    </div>
+                </article>
+                <%if(order.status === 'Canceled'){%>
+                    <div class="track">
+                        <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order confirmed</span> </div>
+                        <div class="step active"> </div>
+                        <div class="step active"> </div>
+                        <div class="step active"> <span class="icon"> <i class="fa-regular fa-rectangle-xmark"></i> </span> <span class="text">cancelled</span> </div>
+                    </div>
+                    <% }else if(order.status === 'Returned') {%>
+                        <div class="track">
+                            <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order confirmed</span> </div>
+                            <div class="step active"> </div>
+                            <div class="step active"> </div>
+                            <div class="step active"> <span class="icon"> <i class="fa-regular fa-rectangle-xmark"></i> </span> <span class="text">Returned</span> </div>
+                        </div>
+                <%}else{%>
+                <div class="track">
+                    <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order confirmed</span> </div>
+                    <div class="step <%=  order.status === 'Processing' || order.status === 'Shipped' || order.status === 'Delivered' ? 'active' : '' %>"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Picked by courier</span> </div>
+                    <div class="step <%=  order.status === 'Shipped' || order.status === 'Delivered' ? 'active' : '' %>"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text"> shipped</span> </div>
+                    <div class="step <%= order.status === 'Delivered' ? 'active' : '' %>"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">Delivered</span> </div>
+                </div>
+            <%}%>
+              <br>
+
+                <div>
+                    
+                   <h6>Address:</h6>
+                   <%if(order.status==='Pending'){%>
+                        <p class="text-success "><%=order.deliveryAddress.addressType%></p>
+                      <p class="card-text"><%=order.deliveryAddress.HouseNo%> ,<%=order.deliveryAddress.Landmark%> ,<%=order.deliveryAddress.Street%>,<%=order.deliveryAddress.city%>,<%=order.deliveryAddress.district%>
+                        <%=order.deliveryAddress.Country%>,Pincode-<%=order.deliveryAddress.pincode%></p>
+                      <!-- <a href="/address-edit?addressType=<%=order.deliveryAddress.addressType%>" class="btn btn-primary">Edit</a> -->
+                      <%}else{%>
+                        <p class="text-success "><%=order.deliveryAddress.addressType%></p>
+                      <p class="card-text"><%=order.deliveryAddress.HouseNo%> ,<%=order.deliveryAddress.Landmark%> ,<%=order.deliveryAddress.Street%>,<%=order.deliveryAddress.city%>,<%=order.deliveryAddress.district%>
+                        <%=order.deliveryAddress.Country%>,Pincode-<%=order.deliveryAddress.pincode%></p>
+                      <%}%>
+                </div>
+                <hr>
+                <ul class="row">
+                    <%order.items.forEach((item)=>{%>
+                    <li class="col-md">
+                        <figure class="itemside mb-3">
+                            <div class="aside"><img src="/uploads/productImages/<%=item.image%>" class="img-sm border"></div>
+                            <figcaption class="info align-self-center">
+                                <p class="title"><%=item.name %> <br> Qty:<%=item.quantity %></p> <span class="text-muted">Rs.<%=item.price %> </span>
+                                <%if(order.status === 'Delivered' && order.items.reviewed ){%>
+                                    <div class="container" id="reviewrating" style=" background-color: white;
+                                    padding: 20px;
+                                    border-radius: 8px;
+                                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                                    text-align: center;
+                                    width: 400px;">
+                                        <h5 class="bold">Rate and support us</h5>
+                                        <div class="rating">
+                                            <span id="rating">0</span>/5
+                                        </div>
+                                        <div class="stars" style="font-size: 30px;
+                                        margin: 10px 0;" id="stars">
+                                            <span class="star" style="cursor: pointer;
+                                            margin: 0 5px;" data-value="1">★</span>
+                                            <span class="star" style="cursor: pointer;
+                                            margin: 0 5px;" data-value="2">★</span>
+                                            <span class="star" style="cursor: pointer;
+                                            margin: 0 5px;" data-value="3">★</span>
+                                            <span class="star" style="cursor: pointer;
+                                            margin: 0 5px;" data-value="4">★</span>
+                                            <span class="star" style="cursor: pointer;
+                                            margin: 0 5px;" data-value="5">★</span>
+                                        </div>
+                                        <p>Share your review:</p>
+                                        <input id="review" class="form-control"
+                                                  placeholder="Write your review here">
+                                    </input>
+                                    <br>
+                                        <button id="submitreview" onclick="reviewUpdate('<%=item.productId %>','<%=order._id%>')">Submit</button>
+                                        <div class="reviews" id="reviews">
+                                        </div>
+                                    </div>
+                                    <%}%>
+                                       
+                            </figcaption>
+                        </figure>
+                    </li>
+               <%})%>
+                </ul>
+                
+                <hr>
+                <!-- <a  href="/pdf?id=<%=order._id%>" download="Invoice.pdf">Download Invoice</a> -->
+                <a href="/user/profile" class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-left"></i> Back to Orders</a>
+                
+                <% if(order.status === 'Delivered'){%>
+                    <button class="btn btn-warning" onclick="returnOrder('<%= order.oId %>')" data-abc="true">
+                        <i class="fa fa-chevron-left"></i> Return Order
+                    </button>
+                    <%}else if(order.status !== 'Canceled' && order.status !== 'Returned'){%>
+                        <button class="btn btn-warning" onclick="cancelOrder('<%= order.oId %>')" data-abc="true">
+                            <i class="fa fa-chevron-left"></i> Cancel Order
+                        </button>
+                        <a href="/user/loadInvoice?id=<%=order._id %>" class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-left"></i> Download Invoice</a>
+                        <%}%>
+                
+                <%}%>
+        </article>
+    </div>
+   </section>
+
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__logo">
+                            <a href="#"><img src="img/logo2.png" alt=""></a>
+                        </div>
+                        <p>The customer is at the heart of our unique business model, which includes design.</p>
+                        <a href="#"><img src="img/payment.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Shopping</h6>
+                        <ul>
+                            <li><a href="#">Clothing Store</a></li>
+                            <li><a href="#">Trending Shoes</a></li>
+                            <li><a href="#">Accessories</a></li>
+                            <li><a href="#">Sale</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Shopping</h6>
+                        <ul>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Payment Methods</a></li>
+                            <li><a href="#">Delivary</a></li>
+                            <li><a href="#">Return & Exchanges</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>NewLetter</h6>
+                        <div class="footer__newslatter">
+                            <p>Be the first to know about new arrivals, look books, sales & promos!</p>
+                            <form action="#">
+                                <input type="text" placeholder="Your email">
+                                <button type="submit"><span class="icon_mail_alt"></span></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="footer__copyright__text">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <p>Copyright ©
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script>2020
+                            All rights reserved | This template is made with <i class="fa fa-heart-o"
+                            aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        </p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Start Modal Add cart -->
+    <div class="modal fade" id="modalAddcart" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col text-right">
+                                <button type="button" class="close modal-close" data-bs-dismiss="modal"
+                                    aria-label="Close">
+                                    <span aria-hidden="true"> <i class="fa fa-times"></i></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-7">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="modal-add-cart-product-img">
+                                            <img class="img-fluid"
+                                                src="assets/images/product/default/home-1/default-1.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="modal-add-cart-info"><i class="fa fa-check-square"></i>Added to cart
+                                            successfully!</div>
+                                        <div class="modal-add-cart-product-cart-buttons">
+                                            <a href="cart.html">View Cart</a>
+                                            <a href="checkout.html">Checkout</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5 modal-border">
+                                <ul class="modal-add-cart-product-shipping-info">
+                                    <li> <strong><i class="icon-shopping-cart"></i> There Are 5 Items In Your
+                                            Cart.</strong></li>
+                                    <li> <strong>TOTAL PRICE: </strong> <span>$187.00</span></li>
+                                    <li class="modal-continue-button"><a href="#" data-bs-dismiss="modal">CONTINUE
+                                            SHOPPING</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End Modal Add cart -->
+
+    <!-- Start Modal Quickview cart -->
+    <div class="modal fade" id="modalQuickview" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col text-right">
+                                <button type="button" class="close modal-close" data-bs-dismiss="modal"
+                                    aria-label="Close">
+                                    <span aria-hidden="true"> <i class="fa fa-times"></i></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="product-details-gallery-area mb-7">
+                                    <!-- Start Large Image -->
+                                    <div class="product-large-image modal-product-image-large swiper-container">
+                                        <div class="swiper-wrapper">
+                                            <div class="product-image-large-image swiper-slide img-responsive">
+                                                <img src="assets/images/product/default/home-1/default-1.jpg" alt="">
+                                            </div>
+                                            <div class="product-image-large-image swiper-slide img-responsive">
+                                                <img src="assets/images/product/default/home-1/default-2.jpg" alt="">
+                                            </div>
+                                            <div class="product-image-large-image swiper-slide img-responsive">
+                                                <img src="assets/images/product/default/home-1/default-3.jpg" alt="">
+                                            </div>
+                                            <div class="product-image-large-image swiper-slide img-responsive">
+                                                <img src="assets/images/product/default/home-1/default-4.jpg" alt="">
+                                            </div>
+                                            <div class="product-image-large-image swiper-slide img-responsive">
+                                                <img src="assets/images/product/default/home-1/default-5.jpg" alt="">
+                                            </div>
+                                            <div class="product-image-large-image swiper-slide img-responsive">
+                                                <img src="assets/images/product/default/home-1/default-6.jpg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Large Image -->
+                                    <!-- Start Thumbnail Image -->
+                                    <div
+                                        class="product-image-thumb modal-product-image-thumb swiper-container pos-relative mt-5">
+                                        <div class="swiper-wrapper">
+                                            <div class="product-image-thumb-single swiper-slide">
+                                                <img class="img-fluid"
+                                                    src="assets/images/product/default/home-1/default-1.jpg" alt="">
+                                            </div>
+                                            <div class="product-image-thumb-single swiper-slide">
+                                                <img class="img-fluid"
+                                                    src="assets/images/product/default/home-1/default-2.jpg" alt="">
+                                            </div>
+                                            <div class="product-image-thumb-single swiper-slide">
+                                                <img class="img-fluid"
+                                                    src="assets/images/product/default/home-1/default-3.jpg" alt="">
+                                            </div>
+                                            <div class="product-image-thumb-single swiper-slide">
+                                                <img class="img-fluid"
+                                                    src="assets/images/product/default/home-1/default-4.jpg" alt="">
+                                            </div>
+                                            <div class="product-image-thumb-single swiper-slide">
+                                                <img class="img-fluid"
+                                                    src="assets/images/product/default/home-1/default-5.jpg" alt="">
+                                            </div>
+                                            <div class="product-image-thumb-single swiper-slide">
+                                                <img class="img-fluid"
+                                                    src="assets/images/product/default/home-1/default-6.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <!-- Add Arrows -->
+                                        <div class="gallery-thumb-arrow swiper-button-next"></div>
+                                        <div class="gallery-thumb-arrow swiper-button-prev"></div>
+                                    </div>
+                                    <!-- End Thumbnail Image -->
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="modal-product-details-content-area">
+                                    <!-- Start  Product Details Text Area-->
+                                    <div class="product-details-text">
+                                        <h4 class="title">Nonstick Dishwasher PFOA</h4>
+                                        <div class="price"><del>$70.00</del>$80.00</div>
+                                    </div> <!-- End  Product Details Text Area-->
+                                    <!-- Start Product Variable Area -->
+                                    <div class="product-details-variable">
+                                        <!-- Product Variable Single Item -->
+                                        <div class="variable-single-item">
+                                            <span>Color</span>
+                                            <div class="product-variable-color">
+                                                <label for="modal-product-color-red">
+                                                    <input name="modal-product-color" id="modal-product-color-red"
+                                                        class="color-select" type="radio" checked>
+                                                    <span class="product-color-red"></span>
+                                                </label>
+                                                <label for="modal-product-color-tomato">
+                                                    <input name="modal-product-color" id="modal-product-color-tomato"
+                                                        class="color-select" type="radio">
+                                                    <span class="product-color-tomato"></span>
+                                                </label>
+                                                <label for="modal-product-color-green">
+                                                    <input name="modal-product-color" id="modal-product-color-green"
+                                                        class="color-select" type="radio">
+                                                    <span class="product-color-green"></span>
+                                                </label>
+                                                <label for="modal-product-color-light-green">
+                                                    <input name="modal-product-color"
+                                                        id="modal-product-color-light-green" class="color-select"
+                                                        type="radio">
+                                                    <span class="product-color-light-green"></span>
+                                                </label>
+                                                <label for="modal-product-color-blue">
+                                                    <input name="modal-product-color" id="modal-product-color-blue"
+                                                        class="color-select" type="radio">
+                                                    <span class="product-color-blue"></span>
+                                                </label>
+                                                <label for="modal-product-color-light-blue">
+                                                    <input name="modal-product-color"
+                                                        id="modal-product-color-light-blue" class="color-select"
+                                                        type="radio">
+                                                    <span class="product-color-light-blue"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <!-- Product Variable Single Item -->
+                                        <div class="d-flex align-items-center flex-wrap">
+                                            <div class="variable-single-item ">
+                                                <span>Quantity</span>
+                                                <div class="product-variable-quantity">
+                                                    <input min="1" max="100" value="1" type="number">
+                                                </div>
+                                            </div>
+
+                                            <div class="product-add-to-cart-btn">
+                                                <a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart">Add To
+                                                    Cart</a>
+                                            </div>
+                                        </div>
+                                    </div> <!-- End Product Variable Area -->
+                                    <div class="modal-product-about-text">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia iste
+                                            laborum ad impedit pariatur esse optio tempora sint ullam autem deleniti nam
+                                            in quos qui nemo ipsum numquam, reiciendis maiores quidem aperiam, rerum vel
+                                            recusandae</p>
+                                    </div>
+                                    <!-- Start  Product Details Social Area-->
+                                    <div class="modal-product-details-social">
+                                        <span class="title">SHARE THIS PRODUCT</span>
+                                        <ul>
+                                            <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
+                                            <li><a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+                                            </li>
+                                            <li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+                                        </ul>
+
+                                    </div> <!-- End  Product Details Social Area-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End Modal Quickview cart -->
+
+    <!-- Search Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search End -->
+
+    <script>
+        function returnOrder(oId) {
+            swal.fire({
+                title: 'Reason for Return:',
+                input: 'text',
+                showCancelButton: true,
+                confirmButtonText: 'Submit',
+                cancelButtonText: 'Cancel',
+                inputValidator: (value) => {
+                    if (!value) {
+                        return 'Please enter something!';
+                    }
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    const reason = result.value;
+                    fetch('/user/return', {
+                        method: "POST",
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            oId,
+                            reason
+                        })
+                    })
+                    .then((response) => {
+                        if (response.ok) {
+                            return response.json();
+                        } else {
+                            throw new Error('Network response was not ok.');
+                        }
+                    })
+                    .then((data) => {
+                        swal.fire({
+                            icon: 'success',
+                            title: 'return Requested',
+                            text: 'Your Return request has been submitted successfully!'
+                        }).then(() => {
+                            window.location.reload();  // Reload the page after success message is shown
+                        });
+                    })
+                    .catch((error) => {
+                        console.error('Fetch Error:', error);
+                        swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'There was an issue processing your Return request. Please try again later.'
+                        });
+                    });
+                }
+            });
+        }
+    </script>
+    <script>
+        function cancelOrder(oId) {
+            swal.fire({
+                title: 'Reason for Cancellation:',
+                input: 'text',
+                showCancelButton: true,
+                confirmButtonText: 'Submit',
+                cancelButtonText: 'Cancel',
+                inputValidator: (value) => {
+                    if (!value) {
+                        return 'Please enter something!';
+                    }
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    const reason = result.value;
+                    fetch('/user/orderdetails', {
+                        method: "POST",
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            oId,
+                            reason
+                        })
+                    })
+                    .then((response) => {
+                        if (response.ok) {
+                            return response.json();
+                        } else {
+                            throw new Error('Network response was not ok.');
+                        }
+                    })
+                    .then((data) => {
+                        swal.fire({
+                            icon: 'success',
+                            title: 'Cancel Requested',
+                            text: 'Your cancellation request has been submitted successfully!'
+                        }).then(() => {
+                            window.location.reload();  // Reload the page after success message is shown
+                        });
+                    })
+                    .catch((error) => {
+                        console.error('Fetch Error:', error);
+                        swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'There was an issue processing your cancellation request. Please try again later.'
+                        });
+                    });
+                }
+            });
+        }
+    </script>
+    
+    <script>
+        document.getElementById("proceedButton").addEventListener("click",async(e)=>{
+            e.preventDefault()
+            const id=document.querySelector('#id').value
+           
+            console.log(id,"details")
+            const data={id}
+            const repayment = await fetch('/user/createOrder',{
+                
+                method:"POST",
+                headers:{
+                    'Content-Type':"application/json"
+                },
+                body:JSON.stringify(data)
+            })
+            if(repayment.ok){
+                const res = await repayment.json();
+                console.log(res,"response----------")
+                if (res.success) {
+                    const options = {
+                        "amount": res.amount,
+                        "currency": "INR",
+                        "name": "Sneakerhead",
+                        "description": "Find your shoes here!",
+                        "image": "http://localhost:3000/user/img/logo2.png",
+                        "order_id": res.order_id,
+                        "handler": async function (response) {
+                            const data1 = {id,response}
+                            console.log(response,"resposnee fail or succ");
+                            
+                            const serverResponse = await fetch('/user/checkout',{
+                                method:"PATCH",
+                                headers:{
+                                    "Content-Type":"application/json"
+                                },
+                                body:JSON.stringify(data1)
+                            }) 
+                            if(serverResponse.ok){
+                                const responseData= await serverResponse.json()
+
+                                Swal.fire({
+                                    title:"Succes",
+                                    text:"Order placed successfully",
+                                    icon:"success",
+                                    confirmButtonText:true
+                                }).then((result)=>{
+                                    if(result.isConfirmed){
+                                        window.location.reload()
+                                    }
+                                })
+                            }
+
+                        },
+                        "prefill": {
+                            "contact": res.contact,
+                            "name": res.name,
+                            "email": res.email
+                        },
+                        "notes": {
+                            "description": res.description
+                        },
+                        "theme": {
+                            "color": "#2300a3"
+                        }
+                    };
+                    const razorpayObject = new Razorpay(options);
+                    console.log(razorpayObject)
+                    razorpayObject.on('payment.failed', function (response) {
+                       
+                        console.log(response)
+                        Swal.fire({
+                            title: 'Payment Failed',
+                            text: response.error.description || 'An error occurred during payment.',
+                            icon: 'error',
+                            confirmButtonText: 'OK'
+                        }).then( async (error)=>{
+    
+                            const data2 ={error,data}
+                            console.log(data2)
+                            const failRes = await fetch ('/user/checkout',{
+                                method:'POST',
+                                headers:{
+                                    "Content-Type":"application/json"
+                                },
+                                body:JSON.stringify(data2)
+                            })
+                            if (failRes.ok) {
+                const responseData = await failRes.json();
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Order placed Payment pending.',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = `/user/orderconfirmed?id=${responseData.order_id}`;
+                    }
+                });
+            } else {
+                const errorData = await failRes.json();
+                Swal.fire({
+                    title: 'Error!',
+                    text: errorData.message || 'An error occurred during order placement.',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            }
+                        });
+                    });
+                    razorpayObject.open();
+                } else {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: res.msg || 'An error occurred during order creation.',
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    });
+                }
+            } else {
+                const errorData = await response.json();
+                Swal.fire({
+                    title: 'Error!',
+                    text: errorData.msg || 'An error occurred during order creation.',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            }
+        })
+
+    </script>
+
+    <script src="assets/js/vendor/vendor.min.js"></script>
+    <script src="assets/js/plugins/plugins.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+
+    
+</body>
+
+</html>

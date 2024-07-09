@@ -1,0 +1,488 @@
+<%- include('../partials/adminheader.ejs') %>
+    <main class="main-wrap">
+        <header class="main-header navbar">
+            <div class="col-search">
+                <!-- <form class="searchform">
+                    <div class="input-group">
+                        <input list="search_terms" type="text" class="form-control" placeholder="Search term">
+                        <button class="btn btn-light bg" type="button"> <i class="material-icons md-search"></i></button>
+                    </div>
+                    <datalist id="search_terms">
+                        <option value="Products">
+                        <option value="New orders">
+                        <option value="Apple iphone">
+                        <option value="Ahmed Hassan">
+                    </datalist>
+                </form> -->
+            </div>
+            <div class="col-nav">
+                <button class="btn btn-icon btn-mobile me-auto" data-trigger="#offcanvas_aside"> <i
+                        class="material-icons md-apps"></i> </button>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link btn-icon" href="#">
+                            <i class="material-icons md-notifications animation-shake"></i>
+                            <span class="badge rounded-pill">3</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-icon darkmode" href="#"> <i class="material-icons md-nights_stay"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="requestfullscreen nav-link btn-icon"><i
+                                class="material-icons md-cast"></i></a>
+                    </li>
+                    <li class="dropdown nav-item">
+                        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#" id="dropdownLanguage"
+                            aria-expanded="false"><i class="material-icons md-public"></i></a>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownLanguage">
+                            <a class="dropdown-item text-brand" href="#"><img src="adminassets/imgs/theme/flag-us.png"
+                                    alt="English">English</a>
+                            <a class="dropdown-item" href="#"><img src="adminassets/imgs/theme/flag-fr.png"
+                                    alt="Français">Français</a>
+                            <a class="dropdown-item" href="#"><img src="adminassets/imgs/theme/flag-jp.png"
+                                    alt="Français">日本語</a>
+                            <a class="dropdown-item" href="#"><img src="adminassets/imgs/theme/flag-cn.png"
+                                    alt="Français">中国人</a>
+                        </div>
+                    </li>
+                    <li class="dropdown nav-item">
+                        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#" id="dropdownAccount"
+                            aria-expanded="false"> <img class="img-xs rounded-circle"
+                                src="adminassets/imgs/people/avatar2.jpg" alt="User"></a>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownAccount">
+                            <a class="dropdown-item" href="#"><i class="material-icons md-perm_identity"></i>Edit
+                                Profile</a>
+                            <a class="dropdown-item" href="#"><i class="material-icons md-settings"></i>Account
+                                Settings</a>
+                            <a class="dropdown-item" href="#"><i
+                                    class="material-icons md-account_balance_wallet"></i>Wallet</a>
+                            <a class="dropdown-item" href="#"><i class="material-icons md-receipt"></i>Billing</a>
+                            <a class="dropdown-item" href="#"><i class="material-icons md-help_outline"></i>Help
+                                center</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-danger" href="/admin/logout"><i
+                                    class="material-icons md-exit_to_app"></i>Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <section class="content-main">
+            <div class="content-header">
+                <div>
+                    <h2 class="content-title card-title">Create Coupon </h2>
+
+                </div>
+
+                <div>
+                    <!-- <input type="text" placeholder="Search Categories" class="form-control bg-white"> -->
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                        <div class="mb-4">
+                            <label for="couponName" class="form-label">Coupon Name</label>
+                            <input type="text" placeholder="Type here" class="form-control" name="name" id="couponName"
+                                required />
+                            <p id="nameError" class="text-danger"></p>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="couponCode" class="form-label">Coupon Code</label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" name="code" id="couponCode"
+                                    placeholder="Generate or type" aria-label="Coupon code" required>
+                                <button class="btn btn-primary" type="button" id="generateCode">Generate Code</button>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label">Description</label>
+                            <textarea placeholder="Type here" class="form-control" name="description" id="description"
+                                required></textarea>
+                            <p id="descriptionError" class="text-danger"></p>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="discountPercentage" class="form-label">Discount Percentage (%)</label>
+                            <input type="number" class="form-control" min="0" name="discountPercentage"
+                                id="discountPercentage" required />
+                            <p id="discountPercentageError" class="text-danger"></p>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="minPurchaseAmount" class="form-label">Minimum Purchase Amount</label>
+                            <input type="number" class="form-control" name="minPurchaseAmount" id="minPurchaseAmount"
+                                required />
+                            <p id="minimumAmountError" class="text-danger"></p>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="maxPurchaseAmount" class="form-label">Maximum Purchase Amount</label>
+                            <input type="number" class="form-control" name="maxPurchaseAmount" id="maxPurchaseAmount"
+                                required />
+                            <p id="maximumAmountError" class="text-danger"></p>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="expirationDate" class="form-label">Expiration Date</label>
+                            <input type="date" class="form-control" name="expirationDate" id="expirationDate"
+                                required />
+                            <p id="expirationDateError" class="text-danger"></p>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="maxUsers" class="form-label">Maximum Users Allowed</label>
+                            <input type="number" class="form-control" name="maxUsers" id="maxUsers" required />
+                            <p id="maxUsersError" class="text-danger"></p>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary" id="submitForm" onclick="addCoupon()">Create Coupon</button>
+                        </div>
+                    <div class="mt-3">
+                        <a href="/admin/coupon" class="btn btn-secondary">Go Back</a>
+                    </div>
+                </div>
+            </div>
+
+        </section> <!-- content-main end// -->
+        <footer class="main-footer font-xs">
+            <div class="row pb-30 pt-15">
+                <div class="col-sm-6">
+                    <script>
+                        document.write(new Date().getFullYear())
+                    </script> ©, Evara - HTML Ecommerce Template .
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-sm-end">
+                        All rights reserved
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src="adminassets/js/vendors/jquery-3.6.0.min.js"></script>
+    <script src="adminassets/js/vendors/bootstrap.bundle.min.js"></script>
+    <script src="adminassets/js/vendors/select2.min.js"></script>
+    <script src="adminassets/js/vendors/perfect-scrollbar.js"></script>
+    <script src="adminassets/js/vendors/jquery.fullscreen.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Main Script -->
+    <script src="adminassets/js/main.js" type="text/javascript"></script>
+
+
+    <script>
+        document.getElementById('generateCode').onclick = function () {
+            const randomCode = 'CP' + Math.random().toString(36).substr(2, 8).toUpperCase();
+            document.getElementById('couponCode').value = randomCode;
+        };
+    </script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            const formattedDate = tomorrow.toISOString().split('T')[0];
+
+            const expirationDateInput = document.getElementById('expirationDate');
+            expirationDateInput.value = formattedDate;
+            expirationDateInput.min = formattedDate;
+
+            const minimumAmountInput = document.getElementById('minPurchaseAmount');
+            const maximumAmountInput = document.getElementById('maxPurchaseAmount');
+            maximumAmountInput.min = minimumAmountInput.value;
+        });
+
+        function validateInput(inputId, pattern, errorId, errorMessage) {
+            const inputValue = document.getElementById(inputId).value.trim();
+            const errorElement = document.getElementById(errorId);
+
+            if (inputValue === '') {
+                errorElement.innerText = errorMessage + ' is required.';
+                return false;
+            } else if (pattern && !pattern.test(inputValue)) {
+                errorElement.innerText = 'Please enter a valid ' + errorMessage.toLowerCase() + '.';
+                return false;
+            } else {
+                errorElement.innerText = '';
+                return true;
+            }
+        }
+
+        function validateDescription() {
+            const description = document.getElementById('description').value.trim();
+            const descriptionError = document.getElementById('descriptionError');
+            if (description === '') {
+                descriptionError.innerText = 'Description is required.';
+                return false;
+            } else if (description.length > 20) {
+                descriptionError.innerText = 'Description must be less than 20 characters.';
+                return false;
+            } else if (!/^[a-zA-Z\s]*$/.test(description)) {
+                descriptionError.innerText = 'Description should not contain numbers.';
+                return false;
+            } else {
+                descriptionError.innerText = '';
+                return true;
+            }
+        }
+
+        function validateAmounts() {
+            const minimumAmount = parseFloat(document.getElementById('minPurchaseAmount').value);
+            const maximumAmount = parseFloat(document.getElementById('maxPurchaseAmount').value);
+            const minimumAmountError = document.getElementById('minimumAmountError');
+            const maximumAmountError = document.getElementById('maximumAmountError');
+
+            if (isNaN(minimumAmount) || isNaN(maximumAmount) || minimumAmount < 0 || maximumAmount < 0) {
+                minimumAmountError.innerText = 'Minimum and maximum amounts must be non-negative numbers.';
+                maximumAmountError.innerText = 'Minimum and maximum amounts must be non-negative numbers.';
+                return false;
+            } else if (minimumAmount >= maximumAmount) {
+                minimumAmountError.innerText = 'Minimum amount must be less than maximum amount.';
+                maximumAmountError.innerText = 'Maximum amount must be greater than minimum amount.';
+                return false;
+            } else {
+                minimumAmountError.innerText = '';
+                maximumAmountError.innerText = '';
+                return true;
+            }
+        }
+
+        function validateDiscountPercentage() {
+            const discountPercentageInput = document.getElementById('discountPercentage');
+            const discountPercentage = parseFloat(discountPercentageInput.value.trim());
+            const discountPercentageError = document.getElementById('discountPercentageError');
+
+            if (discountPercentageInput.value.trim() === '') {
+                discountPercentageError.innerHTML = "Discount percentage is required";
+            } else if (isNaN(discountPercentage) || discountPercentage < 5 || discountPercentage > 75) {
+                discountPercentageError.innerHTML = "Discount percentage should be between 5% and 75%";
+            } else {
+                discountPercentageError.innerHTML = "";
+            }
+        }
+
+        function validateMaxUsers() {
+    const maxUsersInput = document.getElementById('maxUsers');
+    const maxUsersError = document.getElementById('maxUsersError');
+    const maxUsers = parseInt(maxUsersInput.value.trim());
+
+    if (maxUsersInput.value.trim() === '') {
+        maxUsersError.innerText = "Maximum users allowed is required";
+        return false;
+    } else if (isNaN(maxUsers) || maxUsers < 1 || maxUsers > 10) {
+        maxUsersError.innerText = "Maximum users allowed should be between 1 and 10";
+        return false;
+    } else {
+        maxUsersError.innerText = '';
+        return true;
+    }
+}
+
+
+
+
+        function clearErrorMessage(event) {
+            const input = event.target;
+            const errorElement = document.getElementById(input.id + 'Error');
+            errorElement.innerText = '';
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const descriptionInput = document.getElementById('description');
+            const discountPercentage = document.getElementById('discountPercentage');
+            const minAmountInput = document.getElementById('minPurchaseAmount');
+            const maxAmountInput = document.getElementById('maxPurchaseAmount');
+            const maxUsersInput = document.getElementById('maxUsers');
+
+            descriptionInput.addEventListener('blur', validateDescription);
+            discountPercentage.addEventListener('blur', validateDiscountPercentage);
+            minAmountInput.addEventListener('blur', validateAmounts);
+            maxAmountInput.addEventListener('blur', validateAmounts);
+            maxUsersInput.addEventListener('blur', validateMaxUsers);
+
+            const inputs = [descriptionInput, discountPercentage, minAmountInput, maxAmountInput, maxUsersInput];
+
+            inputs.forEach(input => {
+                input.addEventListener('focus', clearErrorMessage);
+            });
+        });
+
+
+        document.getElementById('generateCode').addEventListener('click', function () {
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            const codeLength = 8;
+            let randomCode = '';
+
+            for (let i = 0; i < codeLength; i++) {
+                const randomIndex = Math.floor(Math.random() * characters.length);
+                randomCode += characters.charAt(randomIndex);
+            }
+
+            document.getElementById('couponCode').value = randomCode;
+        });
+
+
+        function submitForm(event) {
+    event.preventDefault();
+
+    const isValid = validateDescription() && validateAmounts() && validateMaxUsers() && validateDiscountPercentage();
+
+    if (!isValid) {
+        document.getElementById('main-error').innerText = 'Please correct the fields.';
+        return;
+    }
+
+    // Additional validation to check if the maximum users field is not empty
+    const maxUsersInput = document.getElementById('maxUsers');
+    if (maxUsersInput.value.trim() === '') {
+        document.getElementById('maxUsersError').innerText = "Maximum users allowed is required";
+        return;
+    }
+
+    addCoupon(); // Proceed with coupon creation if all validations pass
+}
+
+
+//     function addCoupon(){
+
+
+//     const description = document.getElementById('description').value
+//     const name = document.getElementById('couponName').value
+//     const code = document.getElementById('couponCode').value
+//     const discountPercentage = document.getElementById('discountPercentage').value
+//     const minPurchaseAmount = document.getElementById('minPurchaseAmount').value
+//     const maxPurchaseAmount = document.getElementById('maxPurchaseAmount').value
+//     const expirationDate = document.getElementById('expirationDate').value
+//     const maxUsers = document.getElementById('maxUsers').value
+
+//     const formObject = {
+//         description: description,
+//         name: name, 
+//         code: code,
+//         discountPercentage: discountPercentage,
+//         minPurchaseAmount: minPurchaseAmount,
+//         maxPurchaseAmount: maxPurchaseAmount,
+//         expirationDate: expirationDate,
+//         maxUsers: maxUsers
+//     };
+
+//     console.log(formObject);
+  
+
+//     fetch('/admin/createcoupon', {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify(formObject),
+//     })
+//     .then(response => response.json()) // Parse the JSON from the response
+//     .then(data => {
+//         if (data.success== true) {
+//             // Show success message using SweetAlert
+//             Swal.fire({
+//                 title: 'Success!',
+//                 text: 'Coupon created successfully.',
+//                 icon: 'success',
+//                 confirmButtonText: 'Cool'
+//             }).then(() => {
+//                 // This function is called when the user clicks 'Cool' on the SweetAlert modal
+//                 window.location.href = '/admin/coupon'; // Redirecting to the coupon list page
+//             });
+//         } else {
+//             // Show error message if coupon creation was not successful
+//             Swal.fire({
+//                 title: 'Error!',
+//                 text: data.message || 'Failed to create coupon.',
+//                 icon: 'error',
+//                 confirmButtonText: 'Try Again'
+//             });
+//         }
+//     })
+//     .catch(error => {
+//         console.error('Error:', error);
+//         // Fallback if SweetAlert is not available or any other error occurs
+//         alert(error.message || 'Something went wrong!');
+//     });
+
+// }
+
+function addCoupon() {
+    const maxUsersInput = document.getElementById('maxUsers');
+    const maxUsersError = document.getElementById('maxUsersError');
+    const maxUsers = maxUsersInput.value.trim();
+
+    // Validate maximum users field
+    if (maxUsers === '') {
+        maxUsersError.innerText = "Maximum users allowed is required";
+        return; // Exit function if validation fails
+    }
+
+    // If validation passes, proceed with creating the coupon
+    const description = document.getElementById('description').value;
+    const name = document.getElementById('couponName').value;
+    const code = document.getElementById('couponCode').value;
+    const discountPercentage = document.getElementById('discountPercentage').value;
+    const minPurchaseAmount = document.getElementById('minPurchaseAmount').value;
+    const maxPurchaseAmount = document.getElementById('maxPurchaseAmount').value;
+    const expirationDate = document.getElementById('expirationDate').value;
+
+    const formObject = {
+        description: description,
+        name: name,
+        code: code,
+        discountPercentage: discountPercentage,
+        minPurchaseAmount: minPurchaseAmount,
+        maxPurchaseAmount: maxPurchaseAmount,
+        expirationDate: expirationDate,
+        maxUsers: maxUsers
+    };
+
+    console.log(formObject);
+
+    fetch('/admin/createcoupon', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formObject),
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success == true) {
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Coupon created successfully.',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                }).then(() => {
+                    window.location.href = '/admin/coupon';
+                });
+            } else {
+                Swal.fire({
+                    title: 'Error!',
+                    text: data.message || 'Failed to create coupon.',
+                    icon: 'error',
+                    confirmButtonText: 'Try Again'
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert(error.message || 'Something went wrong!');
+        });
+}
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

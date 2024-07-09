@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Male_Fashion Template">
+    <meta name="keywords" content="Male_Fashion, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sneakerhead</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+    <style>
+
+/* Style for the tab navigation */
+.dashboard_tab_button ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.dashboard_tab_button ul li {
+    margin-bottom: 10px;
+}
+
+.dashboard_tab_button ul li a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.dashboard_tab_button ul li a.active {
+    color: #fff;
+    background-color: #ff0000;
+    border-radius: 5px;
+}
+
+/* Style for the tab content */
+.dashboard_content {
+    padding: 20px;
+}
+
+/* Style for the card */
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-text {
+    margin-bottom: 10px;
+}
+
+.btn-black-default-hover {
+    color: #fff;
+    background-color: #000;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.btn-black-default-hover:hover {
+    background-color: #333;
+}
+
+.shopping-cart.spad {
+    height: 60%; /* Set a fixed height for the section */
+}
+
+.shopping-cart.spad .account-dashboard {
+    height: 100%; /* Set a fixed height for the account dashboard */
+}
+
+.dashboard_tab_button {
+    height: 100%; /* Set a fixed height for the tab button container */
+}
+
+.dashboard_content {
+    height: 100%; /* Set a fixed height for the tab content container */
+}
+
+
+
+
+
+    </style>
+     <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
+     <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
+     <link rel="stylesheet" href="assets/css/style.min.css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__option">
+            <div class="offcanvas__links">
+                <% if (typeof user !== 'undefined') { %>
+                    <a href="/user/profile">Profile</a>
+                    <a href="/user/logout">Logout</a>
+                <% } else { %>
+                    <a href="/user/login">Sign in</a>
+                   
+                <% } %> 
+            </div>
+            <div class="offcanvas__top__hover">
+                <span>Usd <i class="arrow_carrot-down"></i></span>
+                <ul>
+                    <li>USD</li>
+                    <li>EUR</li>
+                    <li>USD</li>
+                </ul>
+            </div>
+        </div>
+        <div class="offcanvas__nav__option">
+            <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
+            <a href="#"><img src="img/icon/heart.png" alt=""></a>
+            <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+            <div class="price"> </div>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+        <div class="offcanvas__text">
+            <p>Free shipping, 30-day return or refund guarantee.</p>
+        </div>
+    </div>
+    <!-- Offcanvas Menu End -->
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-7">
+                        <div class="header__top__left">
+                            <p>Free shipping, 30-day return or refund guarantee.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-5">
+                        <div class="header__top__right">
+                            <div class="header__top__links">
+                                <% if (typeof user_id !== 'undefined') { %>
+                                    <a href="/user/profile">Profile</a>
+                                    <a href="/user/logout">logout</a>
+                                <% } else { %>
+                                    <a href="/user/login">Sign in</a>
+                                    <a href="#">FAQs</a>
+                                <% } %>
+                            </div>
+                            <div class="header__top__hover">
+                                <span>Usd <i class="arrow_carrot-down"></i></span>
+                                <ul>
+                                    <li>USD</li>
+                                    <li>EUR</li>
+                                    <li>USD</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__logo">
+                        <a href="/user/index"><img src="img/logo2.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <nav class="header__menu mobile-menu">
+                        <ul>
+                            <li class="active"><a href="/user/index">Home</a></li>
+                            <li><a href="/user/shop">Shop</a></li>
+                            
+                            
+                            <li><a href="/user/contact">Contacts</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__nav__option">
+                        <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
+                        <a href="/user/wishlist"><img src="img/icon/heart.png" alt=""></a>
+                        <a href="/user/cart"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+                        <div class="price"> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="canvas__open"><i class="fa fa-bars"></i></div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__text">
+                        <h4>Profile</h4>
+                        <div class="breadcrumb__links">
+                            <a href="/user/index">Home</a>
+                            <a href="/user/profile">Profile</a>
+                            <span>Edit-Address</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+    <section class="shop spad"> 
+        <div class="account-dashboard">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-3 col-lg-3">
+                        <!-- Nav tabs -->
+                        <div class="dashboard_tab_button" data-aos="fade-up" data-aos-delay="0">
+                            <ul role="tablist" class="nav flex-column dashboard-list">
+                                <li><a href="#dashboard" data-bs-toggle="tab"
+                                        class="nav-link btn btn-block btn-md btn-black-default-hover active">Addresses</a>
+                                </li>
+                                <!-- <li> <a href="#orders" data-bs-toggle="tab"
+                                        class="nav-link btn btn-block btn-md btn-black-default-hover">Orders</a></li> -->
+                                <!-- <li><a href="#downloads" data-bs-toggle="tab"
+                                        class="nav-link btn btn-block btn-md btn-black-default-hover">Downloads</a></li> -->
+                                <!-- <li><a href="userprofile" data-bs-toggle="tab"
+                                        class="nav-link btn btn-block btn-md btn-black-default-hover">Accountdetails</a></li> -->
+                                <!-- <li><a href="#account-details" data-bs-toggle="tab"
+                                        class="nav-link btn btn-block btn-md btn-black-default-hover">Dashboard</a>
+                                </li> -->
+                                <!-- <li><a href="login.html"
+                                        class="nav-link btn btn-block btn-md btn-black-default-hover">logout</a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-9 col-lg-9">
+                        <!-- Tab panes -->
+                        <div class="tab-content dashboard_content" data-aos="fade-up" data-aos-delay="200">
+                            <div class="tab-pane fade show active" id="dashboard">
+                                <form action="" method="post" onsubmit="return validateForm(event)">
+                                    <!-- Address Fields -->
+                                    <div class="default-form-box mb-20">
+                                        <%if(typeof message!=='undefined'){%>
+                                            <p class="text-success"><%=message%></p>
+                                            <%}%>
+                                            <%if(typeof error!=='undefined'){%>
+                                                <p class="text-danger"><%=error%></p>
+                                                <%}%>
+                                        <label>Address Type</label>
+                                        <select name="addressType">
+                                            <option value="home" <%= addresses.addressType === 'home' ? 'selected' : '' %>>Home</option>
+                                            <option value="work" <%= addresses.addressType === 'work' ? 'selected' : '' %>>Work</option>
+                                            <option value="temp" <%= addresses.addressType === 'temp' ? 'selected' : '' %>>Temporary</option>
+                                        </select>
+                                        
+                                    </div><br><br>
+                                    <div class="default-form-box mb-20">
+                                        <label>House No</label>
+                                        <input type="text" name="houseNo" id="houseNo" value="<%=addresses.HouseNo%>">
+                                        <p id="housenoError" class="text-danger"></p>
+                                    </div>
+                                    <div class="default-form-box mb-20">
+                                        <label>Street</label>
+                                        <input type="text" name="street" id="street" value="<%=addresses.Street%>">
+                                        <p id="streetError" class="text-danger"></p>
+                                    </div>
+                                    <div class="default-form-box mb-20">
+                                        <label>Landmark</label>
+                                        <input type="text" name="landmark" id="landmark" value="<%=addresses.Landmark%>">
+                                        <p id="landmarkError" class="text-danger"></p>
+                                    </div>
+                                    <div class="default-form-box mb-20">
+                                        <label>Pincode</label>
+                                        <input type="number" name="pincode" id="pincode"  value="<%=addresses.pincode%>">
+                                        <p id="pincodeError" class="text-danger"></p>
+                                    </div>
+                                    <div class="default-form-box mb-20">
+                                        <label>City</label>
+                                        <input type="text" name="city" id="city" value="<%=addresses.city%>">
+                                        <p id="cityError" class="text-danger"></p>
+                                    </div>
+                                    <div class="default-form-box mb-20">
+                                        <label>District</label>
+                                        <input type="text" name="district" id="district" value="<%=addresses.district%>">
+                                        <p id="districtError" class="text-danger"></p>
+                                    </div>
+                                    <div class="default-form-box mb-20">
+                                        <label>State</label>
+                                        <input type="text" name="state" id="state"  value="<%=addresses.State%>">
+                                        <p id="stateError" class="text-danger"></p>
+                                    </div>
+                                    <div class="default-form-box mb-20">
+                                        <label>Country</label>
+                                        <input type="text" name="country" id="country" value="<%=addresses.Country%>">
+                                        <p id="countryError" class="text-danger"></p>
+                                    </div>
+                                    <div class="save_button mt-3">
+                                        <p id="mainError" class="text-danger"></p>
+                                        <button class="btn btn-md btn-black-default-hover" type="submit">Add</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="orders">
+                                <h4>Orders</h4>
+                                <div class="table_page table-responsive">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Order</th>
+                                                <th>Date</th>
+                                                <th>Status</th>
+                                                <th>Total</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>May 10, 2018</td>
+                                                <td><span class="success">Completed</span></td>
+                                                <td>$25.00 for 1 item </td>
+                                                <td><a href="cart.html" class="view">view</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>May 10, 2018</td>
+                                                <td>Processing</td>
+                                                <td>$17.00 for 1 item </td>
+                                                <td><a href="cart.html" class="view">view</a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="downloads">
+                                <h4>Downloads</h4>
+                                <div class="table_page table-responsive">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Product</th>
+                                                <th>Downloads</th>
+                                                <th>Expires</th>
+                                                <th>Download</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Shopnovilla - Free Real Estate PSD Template</td>
+                                                <td>May 10, 2018</td>
+                                                <td><span class="danger">Expired</span></td>
+                                                <td><a href="#" class="view">Click Here To Download Your File</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Organic - ecommerce html template</td>
+                                                <td>Sep 11, 2018</td>
+                                                <td>Never</td>
+                                                <td><a href="#" class="view">Click Here To Download Your File</a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="address">
+                                <p>The following addresses will be used on the checkout page by default.</p>
+                                <h5 class="billing-address">Billing address</h5>
+                                <a href="#" class="view">Edit</a>
+                                <p><strong>Bobby Jackson</strong></p>
+                                <address>
+                                    Address: Your address goes here.
+                                </address>
+                            </div>
+                            <div class="tab-pane fade" id="account-details">
+                                <h3>Account details </h3>
+                                <div class="login">
+                                    <div class="login_form_container">
+                                        <div class="account_login_form">
+                                            <h4>Dashboard </h4>
+                                <p>From your account dashboard. you can easily check &amp; view your <a href="#">recent
+                                        orders</a>, manage your <a href="#">shipping and billing addresses</a> and <a
+                                        href="#">Edit your password and account details.</a></p>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__logo">
+                            <a href="#"><img src="img/logo2.png" alt=""></a>
+                        </div>
+                        <p>The customer is at the heart of our unique business model, which includes design.</p>
+                        <a href="#"><img src="img/payment.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Shopping</h6>
+                        <ul>
+                            <li><a href="#">Clothing Store</a></li>
+                            <li><a href="#">Trending Shoes</a></li>
+                            <li><a href="#">Accessories</a></li>
+                            <li><a href="#">Sale</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Shopping</h6>
+                        <ul>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Payment Methods</a></li>
+                            <li><a href="#">Delivary</a></li>
+                            <li><a href="#">Return & Exchanges</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>NewLetter</h6>
+                        <div class="footer__newslatter">
+                            <p>Be the first to know about new arrivals, look books, sales & promos!</p>
+                            <form action="#">
+                                <input type="text" placeholder="Your email">
+                                <button type="submit"><span class="icon_mail_alt"></span></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="footer__copyright__text">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <p>Copyright ©
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script>2020
+                            All rights reserved | This template is made with <i class="fa fa-heart-o"
+                            aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        </p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Footer Section End -->
+
+    <!-- Search Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <script src="assets/js/vendor/vendor.min.js"></script>
+    <script src="assets/js/plugins/plugins.min.js"></script>
+
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+    <script src="/public/assets/js/main.js"></script>
+
+    <script>
+        function getElementValue(id) {
+    const element = document.getElementById(id);
+    return element.value;
+}
+
+function validateInput(inputId, pattern, errorId, errorMessage) {
+    const inputValue = getElementValue(inputId);
+    const errorElement = document.getElementById(errorId);
+
+    if (inputValue.trim() === '') {
+        errorElement.innerText = errorMessage + ' is required.';
+        return false;
+    } else if (pattern && !pattern.test(inputValue)) {
+        errorElement.innerText = 'Please enter a valid ' + errorMessage.toLowerCase() + '.';
+        return false;
+    } else {
+        errorElement.innerText = '';
+        return true;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    const houseNoInput = document.getElementById('houseNo');
+    const streetInput = document.getElementById('street');
+    const landmarkInput = document.getElementById('landmark');
+    const pincodeInput = document.getElementById('pincode');
+    const cityInput = document.getElementById('city');
+    const districtInput = document.getElementById('district');
+    const stateInput = document.getElementById('state');
+    const countryInput = document.getElementById('country');
+
+    houseNoInput.addEventListener('blur', () => validateInput('houseNo', /^\d{3}$/, 'housenoError', 'House Number'));
+    streetInput.addEventListener('blur', () => validateInput('street', /^[a-zA-Z0-9!@#$%^&*()-_+=\[\]{};:'",.<>?]+$/, 'streetError', 'Street'));
+    landmarkInput.addEventListener('blur', () => validateInput('landmark', null, 'landmarkError', 'Landmark'));
+    pincodeInput.addEventListener('blur', () => validateInput('pincode', /^\d{6}$/, 'pincodeError', 'Pincode (6 digits)'));
+    cityInput.addEventListener('blur', () => validateInput('city', /^[a-zA-Z\s]+$/, 'cityError', 'City'));
+    districtInput.addEventListener('blur', () => validateInput('district', /^[a-zA-Z\s]+$/, 'districtError', 'District'));
+    stateInput.addEventListener('blur', () => validateInput('state', /^[a-zA-Z\s]+$/, 'stateError', 'State'));
+    countryInput.addEventListener('blur', () => validateInput('country', /^[a-zA-Z\s]+$/, 'countryError', 'Country'));
+});
+
+function validateForm(event) {
+    const isValidHouseNo = validateInput('houseNo', /^\d{3}$/, 'housenoError', 'House Number');
+    const isValidStreet = validateInput('street', /^[a-zA-Z0-9!@#$%^&*()-_+=\[\]{};:'",.<>?]+$/, 'streetError', 'Street');
+    const isValidLandmark = validateInput('landmark', null, 'landmarkError', 'Landmark');
+    const isValidPincode = validateInput('pincode', /^\d{6}$/, 'pincodeError', 'Pincode (6 digits)');
+    const isValidCity = validateInput('city', /^[a-zA-Z\s]+$/, 'cityError', 'City');
+    const isValidDistrict = validateInput('district', /^[a-zA-Z\s]+$/, 'districtError', 'District');
+    const isValidState = validateInput('state', /^[a-zA-Z\s]+$/, 'stateError', 'State');
+    const isValidCountry = validateInput('country', /^[a-zA-Z\s]+$/, 'countryError', 'Country');
+
+    if (!isValidHouseNo || !isValidStreet || !isValidLandmark || !isValidPincode || !isValidCity || !isValidDistrict || !isValidState || !isValidCountry) {
+        // If any validation fails, prevent form submission
+        event.preventDefault();
+        document.getElementById('mainError').innerText = 'Cannot submit form. Please fix errors.';
+        return false;
+    }
+    // If all validations pass, allow form submission
+    return true;
+}
+
+
+    </script>
+    <!-- Search End -->
+    <!-- Js Plugins -->
+    <!-- ::::::::::::::All JS Files here :::::::::::::: -->
+    <!-- Global Vendor, plugins JS -->
+     <script src="assets/js/vendor/modernizr-3.11.2.min.js"></script>
+    <script src="assets/js/vendor/jquery-3.5.1.min.js"></script>
+    <script src="assets/js/vendor/jquery-migrate-3.3.0.min.js"></script>
+    <script src="assets/js/vendor/popper.min.js"></script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <script src="assets/js/vendor/jquery-ui.min.js"></script> 
+
+    <!--Plugins JS-->
+    <script src="assets/js/plugins/swiper-bundle.min.js"></script>
+    <script src="assets/js/plugins/material-scrolltop.js"></script>
+    <script src="assets/js/plugins/jquery.nice-select.min.js"></script>
+    <script src="assets/js/plugins/jquery.zoom.min.js"></script>
+    <script src="assets/js/plugins/venobox.min.js"></script>
+    <script src="assets/js/plugins/jquery.waypoints.js"></script>
+    <script src="assets/js/plugins/jquery.lineProgressbar.js"></script>
+    <script src="assets/js/plugins/aos.min.js"></script>
+    <script src="assets/js/plugins/jquery.instagramFeed.js"></script>
+    <script src="assets/js/plugins/ajax-mail.js"></script>
+
+    <!-- Use the minified version files listed below for better performance and remove the files listed above -->
+    <script src="assets/js/vendor/vendor.min.js"></script>
+    <script src="assets/js/plugins/plugins.min.js"></script>
+
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+    <!-- Template  JS -->
+    <script src="./assets/js/main.js?v=3.4"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
+    
+
+    

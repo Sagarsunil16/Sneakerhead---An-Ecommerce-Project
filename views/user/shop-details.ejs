@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Male_Fashion Template">
+    <meta name="keywords" content="Male_Fashion, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sneakerhead</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+    <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Initially hide the review form */
+/* Initially hide the review form */
+        .review-form-container {
+            display: none;
+        }
+
+
+        .rating {
+          display: flex;
+          flex-direction: row-reverse;
+          justify-content: flex-start;
+        }
+        
+        .rating input {
+          display: none;
+        }
+        
+        .rating label {
+          font-size: 2rem;
+          color: #ddd;
+          cursor: pointer;
+        }
+        
+        .rating input:checked ~ label,
+        .rating label:hover,
+        .rating label:hover ~ label {
+          color: #f5b301;
+        }
+        .product__details__pic__item {
+    overflow: hidden; /* Hide overflowing child elements */
+}
+
+.product__details__pic__item img {
+    transition: transform 0.4s ease; /* Smooth transformation effect */
+}
+
+.product__details__pic__item:hover img {
+    transform: scale(1.2); /* Zoom effect on hover */
+}
+        </style>
+        
+    <style>
+        .review-rating-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0; /* Adjust margin as needed */
+        }
+        
+        .review-rating {
+            display: flex;
+            align-items: center;
+            font-size: 0.8rem; /* Adjust size as needed */
+            color: #f5b301; /* Star color */
+        }
+        
+        .review-rating i {
+            margin: 0 2px; /* Space between stars */
+        }
+        
+        .review-text {
+            margin-left: 10px; /* Space between stars and text */
+            color: #555; /* Text color */
+            font-size: 1rem; /* Adjust text size as needed */
+        }
+        </style>
+              
+
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__option">
+            <div class="offcanvas__links">
+                <% if (typeof user !== 'undefined') { %>
+                    <a href="/user/profile">Profile</a>
+                    <a href="/user/logout">Logout</a>
+                <% } else { %>
+                    <a href="/user/login">Sign in</a>
+                   
+                <% } %> 
+            </div>
+            <div class="offcanvas__top__hover">
+                <span>Usd <i class="arrow_carrot-down"></i></span>
+                <ul>
+                    <li>USD</li>
+                    <li>EUR</li>
+                    <li>USD</li>
+                </ul>
+            </div>
+        </div>
+        <div class="offcanvas__nav__option">
+            <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
+            <a href="#"><img src="img/icon/heart.png" alt=""></a>
+            <a href="/user/cart"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+            <div class="price"> </div>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+        <div class="offcanvas__text">
+            <p>Free shipping, 30-day return or refund guarantee.</p>
+        </div>
+    </div>
+    <!-- Offcanvas Menu End -->
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-7">
+                        <div class="header__top__left">
+                            <p>Free shipping, 30-day return or refund guarantee.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-5">
+                        <div class="header__top__right">
+                            <div class="header__top__links">
+                                <% if (typeof user_id !== 'undefined') { %>
+                                    <a href="/user/profile">Profile</a>
+                                    <a href="/user/logout">logout</a>
+                                <% } else { %>
+                                    <a href="/user/login">Sign in</a>
+                                    <a href="#">FAQs</a>
+                                <% } %>
+                            </div>
+                            <div class="header__top__hover">
+                                <span>Usd <i class="arrow_carrot-down"></i></span>
+                                <ul>
+                                    <li>USD</li>
+                                    <li>EUR</li>
+                                    <li>USD</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__logo">
+                        <a href="/user/index"><img src="img/logo2.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <nav class="header__menu mobile-menu">
+                        <ul>
+                            <li class="active"><a href="/user/index">Home</a></li>
+                            <li><a href="/user/shop">Shop</a></li>
+                            
+                            
+                            <li><a href="/user/contact">Contacts</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__nav__option">
+                        <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
+                        <a href="/user/wishlist"><img src="img/icon/heart.png" alt=""></a>
+                        <a href="/user/cart"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+                        <div class="price"> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="canvas__open"><i class="fa fa-bars"></i></div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Shop Details Section Begin -->
+    <section class="shop-details">
+        <div class="product__details__pic">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="product__details__breadcrumb">
+                            <a href="/user/index">Home</a>
+                            <a href="/user/shop">Shop</a>
+                            <span>Product Details</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-3">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <% for(let i=0;i<3;i++){%>
+                            <li class="nav-item">
+                                
+                                <a class="nav-link <%= i === 0 ? 'active' : '' %>"  data-toggle="tab" href="#tabs-<%= i + 1 %>" role="tab">
+                                    <div class="product__thumb__pic set-bg" data-setbg="/uploads/ProductImages/<%= product.images[i]%>">
+                                    </div>
+                                </a>
+                            </li>
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">
+                                    <div class="product__thumb__pic set-bg" data-setbg="img/shop-details/thumb-2.png">
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
+                                    <div class="product__thumb__pic set-bg" data-setbg="img/shop-details/thumb-3.png">
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab">
+                                    <div class="product__thumb__pic set-bg" data-setbg="img/shop-details/thumb-4.png">
+                                        <i class="fa fa-play"></i>
+                                    </div>
+                                </a>
+                            </li> -->
+                            <%}%>
+                        </ul>
+                    </div>
+                   
+                    <div class="col-lg-6 col-md-9">
+
+                        <div class="tab-content">
+                            <% for (let i = 0; i < 3; i++) { %>
+                                
+                                <div class="tab-pane <%= i === 0 ? 'active' : '' %>" id="tabs-<%= i + 1 %>" role="tabpanel">
+                                    <div class="product__details__pic__item img-zoom">
+                                        <img src="/uploads/ProductImages/<%= product.images[i] %>" alt="">
+                                    </div>
+                                </div>
+                            <% } %>
+                        </div>
+                        
+                        <!-- <div class="tab-content">
+                            <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                                <div class="product__details__pic__item">
+                                    <img src="/uploads//ProductImages/<%= product.images[0]%>" alt="">
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tabs-2" role="tabpanel">
+                                <div class="product__details__pic__item">
+                                    <img src="/uploads//ProductImages/<%= product.images[1]%>" alt="">
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tabs-3" role="tabpanel">
+                                <div class="product__details__pic__item">
+                                    <img src="img/shop-details/product-big.png" alt="">
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tabs-4" role="tabpanel">
+                                <div class="product__details__pic__item">
+                                    <img src="img/shop-details/product-big-4.png" alt="">
+                                    <a href="https://www.youtube.com/watch?v=8PJ3_p7VqHw&list=RD8PJ3_p7VqHw&start_radio=1" class="video-popup"><i class="fa fa-play"></i></a>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product__details__content">
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="product__details__text">
+                            <h4><%= product.name  %></h4>
+                            <div class="review-rating-container">
+                                <div class="review-rating">
+                                    <% for (let i = 1; i <= product.rating; i++) { %>
+                                        <i class="fa <%= i <= product.rating ? 'fa-star' : 'fa-star-o' %>"></i>
+                                    <% } %>
+                                    <span class="review-text"> - <%= review.length %> Reviews</span>
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            <h3>Rs <%=product.discountPrice %> <span><%= product.price %>></span> </h3>
+                            <h5>stocks left <%=product.countInStock %></h5>
+                            <br>
+                            <!-- <p>Coat with quilted lining and an adjustable hood. Featuring long sleeves with adjustable
+                                cuff tabs, adjustable asymmetric hem with elastic side tabs and a front zip fastening
+                            with placket.</p> -->
+                            <!-- <div class="product__details__option">
+                                <div class="product__details__option__size">
+                                    <span>Size:</span>
+                                    <% for(let i=0;i<product.size.length;i++){ %>
+                                    <% let sizeId = product.size[i].toLowerCase(); %>
+                                    <label for="<%= sizeId %>"><%=product.size[i] %>
+                                        <input type="radio" id="<%= sizeId %>">
+                                    </label>
+                                    <%}%> -->
+                                
+                                <!-- </div>
+                                <div class="product__details__option__color">
+                                    <span>Color:</span>
+                                    <label class="c-1" for="sp-1">
+                                        <input type="radio" id="sp-1">
+                                    </label>
+                                    <label class="c-2" for="sp-2">
+                                        <input type="radio" id="sp-2">
+                                    </label>
+                                    <label class="c-3" for="sp-3">
+                                        <input type="radio" id="sp-3">
+                                    </label>
+                                    <label class="c-4" for="sp-4">
+                                        <input type="radio" id="sp-4">
+                                    </label>
+                                    <label class="c-9" for="sp-9">
+                                        <input type="radio" id="sp-9">
+                                    </label>
+                                </div> -->
+                            <!-- </div> -->
+                            <div class="product__details__cart__option">
+                                <!-- <div class="quantity">
+                                    <div class="pro-qty">
+                                        <input type="text" value="1">
+                                    </div>
+                                </div> -->
+                                <div class="product-add-to-cart-btn">
+                                    <% if (product.countInStock === 0) { %>
+                                        <a class="text-danger">Out Of Stock</a>
+                                    <% } else { %>
+                                        <% if (user_id) { %>
+                                            <a href='#' onclick="addProductCart('<%= product._id %>')">Add to Cart</a>
+                                        <% } else { %>
+                                            <a href="/user/login">Log In</a>
+                                        <% } %>
+                                    <% } %>
+                                    
+                                </div>
+                            </div>
+                            <div class="product__details__btns__option">
+                                <% if(user_id) {%>
+                                <a href="" onclick="addToWishlist('<%=product._id%>'); return false"><i class="fa fa-heart"></i> add to wishlist</a>
+                                <%}%>
+                                <!-- <a href="#"><i class="fa fa-exchange"></i> Add To Compare</a> -->
+                            </div>
+                            <div class="product__details__last__option">
+                                <h5><span>Guaranteed Safe Checkout</span></h5>
+                                <img src="img/shop-details/details-payment.png" alt="">
+                                <ul>
+                                    <!-- <li><span>SKU:</span> 3812912</li> -->
+                                    <li><span>Categories:</span> <%= product.category.name  %></li>
+                                    <!-- <li><span>Tag:</span> Clothes, Skin, Body</li> -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Start Product Content Tab Section -->
+    <div class="product-details-content-tab-section section-top-gap-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="product-details-content-tab-wrapper" data-aos="fade-up" data-aos-delay="0">
+
+                        <!-- Start Product Details Tab Button -->
+                        <ul class="nav tablist product-details-content-tab-btn d-flex justify-content-center">
+                            <li><a class="nav-link active" data-bs-toggle="tab" href="#description">
+                                    Description
+                                </a></li>
+                            <li><a class="nav-link" data-bs-toggle="tab" href="#specification">
+                                    Details
+                                </a></li>
+                            <li><a class="nav-link" data-bs-toggle="tab" href="#review">
+                                    Reviews (1)
+                                </a></li>
+                        </ul> <!-- End Product Details Tab Button -->
+
+                        <!-- Start Product Details Tab Content -->
+                        <div class="product-details-content-tab">
+                            <div class="tab-content">
+                                <!-- Start Product Details Tab Content Singel -->
+                                <div class="tab-pane active show" id="description">
+                                    <div class="single-tab-content-item">
+                                        <p><%= product.description %> </p>
+                                        <!-- <p>Pellentesque aliquet, sem eget laoreet ultrices, ipsum metus feugiat sem,
+                                            quis fermentum turpis eros eget velit. Donec ac tempus ante. Fusce ultricies
+                                            massa massa. Fusce aliquam, purus eget sagittis vulputate, sapien libero
+                                            hendrerit est, sed commodo augue nisi non neque. Lorem ipsum dolor sit amet,
+                                            consectetur adipiscing elit. Sed tempor, lorem et placerat vestibulum, metus
+                                            nisi posuere nisl, in accumsan elit odio quis mi. Cras neque metus,
+                                            consequat et blandit et, luctus a nunc. Etiam gravida vehicula tellus, in
+                                            imperdiet ligula euismod eget</p> -->
+                                    </div>
+                                </div> <!-- End Product Details Tab Content Singel -->
+                                <!-- Start Product Details Tab Content Singel -->
+                                <div class="tab-pane" id="specification">
+                                    <div class="single-tab-content-item">
+                                        <table class="table table-bordered mb-20">
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">Brand</th>
+                                                    <td><%=product.brand %></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Product name</th>
+                                                    <td><%= product.name %></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Category</th>
+                                                    <td><%=product.category.name %></td>
+                                                
+                                            </tbody>
+                                        </table>
+                                        <!-- <p>Fashion has been creating well-designed collections since 2010. The brand
+                                            offers feminine designs delivering stylish separates and statement dresses
+                                            which have since evolved into a full ready-to-wear collection in which every
+                                            item is a vital part of a woman's wardrobe. The result? Cool, easy, chic
+                                            looks with youthful elegance and unmistakable signature style. All the
+                                            beautiful pieces are made in Italy and manufactured with the greatest
+                                            attention. Now Fashion extends to a range of accessories including shoes,
+                                            hats, belts and more!</p> -->
+                                    </div>
+                                </div> <!-- End Product Details Tab Content Singel -->
+                                <!-- Start Product Details Tab Content Singel -->
+                                <div class="tab-pane" id="review">
+                                    <div class="single-tab-content-item">
+                                        <!-- Start - Review Comment -->
+                                        <ul class="comment">
+                                            <!-- Start - Review Comment list-->
+                                             <%for(let i=0; i<review.length; i++) {%>
+                                            <li class="comment-list">
+                                                <div class="comment-wrapper">
+                                                    <div class="comment-img">
+                                                        <img src="assets/images/user/image-1.png" alt="">
+                                                    </div>
+                                                    <div class="comment-content">
+                                                        <div class="comment-content-top">
+                                                            <div class="comment-content-left">
+                                                                <h6 class="comment-name"><%= review[i].user.name %></h6>
+                                                                <ul class="review-star">
+                                                                   <% for(let j=1;j<=5;j++){ %>
+                                                                    <%if(j<=review[i].rating){%>
+                                                                        <li class="fill"><i class="ion-android-star"></i></li>
+                                                                        <%}else{ %>
+                                                                            <li class="empty"><i class="ion-android-star"></i></li>
+                                                                    <%}%>
+                                                                    <%}%>
+                                                                </ul>
+                                                            </div>
+                                                           
+                                                        </div>
+
+                                                        <div class="para-content">
+                                                            <p><%=review[i].reviewText%> </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                            </li> <!-- End - Review Comment list-->
+                                            <%}%>
+                                            <!-- Start - Review Comment list-->
+                                            
+                                        </ul> <!-- End - Review Comment -->
+                                        <!-- Add a Review Button -->
+                                        <% if(user_id) {%>
+    <button type="button" id="add-review-button" class="btn btn-md btn-black-default-hover">Add a Review</button>
+    <%}%>                                       
+    <!-- Review Form Container -->
+    <div class="review-form-container">
+        <div class="review-form">
+            <div class="review-form-text-top">
+                <h5>ADD A REVIEW</h5>
+                <p>Your email address will not be published. Required fields are marked *</p>
+            </div>
+
+            <form id="review-form" action="" method="post">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="default-form-box">
+                            <label for="comment-review-text">Your review <span>*</span></label>
+                            <textarea id="comment-review-text" placeholder="Write a review" required></textarea>
+                        </div>
+                        <input id="productId" type="text" value="<%= product._id %>" hidden>
+                    </div>
+                    <div class="rating">
+                        <input type="radio" id="star5" name="rating" value="5" />
+                        <label for="star5" title="5 stars">&#9733;</label>
+                        <input type="radio" id="star4" name="rating" value="4" />
+                        <label for="star4" title="4 stars">&#9733;</label>
+                        <input type="radio" id="star3" name="rating" value="3" />
+                        <label for="star3" title="3 stars">&#9733;</label>
+                        <input type="radio" id="star2" name="rating" value="2" />
+                        <label for="star2" title="2 stars">&#9733;</label>
+                        <input type="radio" id="star1" name="rating" value="1" />
+                        <label for="star1" title="1 star">&#9733;</label>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-md btn-black-default-hover" type="button" id="submit-review">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+                                </div> <!-- End Product Details Tab Content Singel -->
+                            </div>
+                        </div> <!-- End Product Details Tab Content -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End Product Content Tab Section -->
+            </div>
+        </div>
+    </section>
+    <!-- Shop Details Section End -->
+
+    <!-- Related Section Begin -->
+    <section class="related spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3 class="related-title">Related Product</h3>
+                </div>
+            </div>
+            <div class="row">
+                <% relatedProduct.forEach(relatedProduct => { %> 
+                <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
+                    <div class="product__item">
+                        
+                        <div class="product__item__pic set-bg" data-setbg="/uploads/ProductImages/<%= relatedProduct.images[0] %>">
+                            <span class="label">New</span>
+                            <ul class="product__hover">
+                                <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
+                                <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                                <li><a href="/user/productDetails?id=<%= relatedProduct.id %>"><img src="img/icon/search.png" alt=""></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><%= relatedProduct.name %></h6>
+                            <a href="#" class="add-cart">+ Add To Cart</a>
+
+                        
+                            <div class="review-rating">
+                                <% for (let j = 1; j <= relatedProduct.rating ; j++) { %>
+                                    <i class="fa <%= j <= relatedProduct.rating ? 'fa-star' : 'fa-star-o' %>"></i>
+                                <% } %>
+                            </div>
+                        
+                            <h5><h6>Rs <%= relatedProduct.price %></h6></h5>
+                            <h6> <%=category %></h6>
+                            <div class="product__color__select">
+                                <label for="pc-1">
+                                    <input type="radio" id="pc-1">
+                                </label>
+                                <label class="active black" for="pc-2">
+                                    <input type="radio" id="pc-2">
+                                </label>
+                                <label class="grey" for="pc-3">
+                                    <input type="radio" id="pc-3">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="img/product/product-2.jpg">
+                            <ul class="product__hover">
+                                <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
+                                <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                                <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6>Piqué Biker Jacket</h6>
+                            <a href="#" class="add-cart">+ Add To Cart</a>
+                            <div class="rating">
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                            <h5>$67.24</h5>
+                            <div class="product__color__select">
+                                <label for="pc-4">
+                                    <input type="radio" id="pc-4">
+                                </label>
+                                <label class="active black" for="pc-5">
+                                    <input type="radio" id="pc-5">
+                                </label>
+                                <label class="grey" for="pc-6">
+                                    <input type="radio" id="pc-6">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
+                    <div class="product__item sale">
+                        <div class="product__item__pic set-bg" data-setbg="img/product/product-3.jpg">
+                            <span class="label">Sale</span>
+                            <ul class="product__hover">
+                                <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
+                                <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                                <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6>Multi-pocket Chest Bag</h6>
+                            <a href="#" class="add-cart">+ Add To Cart</a>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                            <h5>$43.48</h5>
+                            <div class="product__color__select">
+                                <label for="pc-7">
+                                    <input type="radio" id="pc-7">
+                                </label>
+                                <label class="active black" for="pc-8">
+                                    <input type="radio" id="pc-8">
+                                </label>
+                                <label class="grey" for="pc-9">
+                                    <input type="radio" id="pc-9">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="img/product/product-4.jpg">
+                            <ul class="product__hover">
+                                <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
+                                <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                                <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6>Diagonal Textured Cap</h6>
+                            <a href="#" class="add-cart">+ Add To Cart</a>
+                            <div class="rating">
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                            <h5>$60.9</h5>
+                            <div class="product__color__select">
+                                <label for="pc-10">
+                                    <input type="radio" id="pc-10">
+                                </label>
+                                <label class="active black" for="pc-11">
+                                    <input type="radio" id="pc-11">
+                                </label>
+                                <label class="grey" for="pc-12">
+                                    <input type="radio" id="pc-12">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
+                <%});%>
+            </div>
+            
+        </div> 
+        
+    </section>
+    <!-- Related Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__logo">
+                            <a href="#"><img src="img/logo2.png" alt=""></a>
+                        </div>
+                        <p>The customer is at the heart of our unique business model, which includes design.</p>
+                        <a href="#"><img src="img/payment.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Shopping</h6>
+                        <ul>
+                            <li><a href="#">Clothing Store</a></li>
+                            <li><a href="#">Trending Shoes</a></li>
+                            <li><a href="#">Accessories</a></li>
+                            <li><a href="#">Sale</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Shopping</h6>
+                        <ul>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Payment Methods</a></li>
+                            <li><a href="#">Delivary</a></li>
+                            <li><a href="#">Return & Exchanges</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>NewLetter</h6>
+                        <div class="footer__newslatter">
+                            <p>Be the first to know about new arrivals, look books, sales & promos!</p>
+                            <form action="#">
+                                <input type="text" placeholder="Your email">
+                                <button type="submit"><span class="icon_mail_alt"></span></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="footer__copyright__text">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <p>Copyright ©
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script>2020
+                            All rights reserved | This template is made with <i class="fa fa-heart-o"
+                            aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        </p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Footer Section End -->
+    <!-- Start Modal Add cart -->
+    <div class="modal fade" id="modalAddcart" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col text-right">
+                                <button type="button" class="close modal-close" data-bs-dismiss="modal"
+                                    aria-label="Close">
+                                    <span aria-hidden="true"> <i class="fa fa-times"></i></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-7">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="modal-add-cart-product-img">
+                                            <img class="img-fluid"
+                                                src="assets/images/product/default/home-1/default-1.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="modal-add-cart-info"><i class="fa fa-check-square"></i>Added to cart
+                                            successfully!</div>
+                                        <div class="modal-add-cart-product-cart-buttons">
+                                            <a href="cart.html">View Cart</a>
+                                            <a href="checkout.html">Checkout</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5 modal-border">
+                                <ul class="modal-add-cart-product-shipping-info">
+                                    <li> <strong><i class="icon-shopping-cart"></i> There Are 5 Items In Your
+                                            Cart.</strong></li>
+                                    <li> <strong>TOTAL PRICE: </strong> <span>$187.00</span></li>
+                                    <li class="modal-continue-button"><a href="#" data-bs-dismiss="modal">CONTINUE
+                                            SHOPPING</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End Modal Add cart -->
+
+    <!-- Search Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search End -->
+      <!-- Ensure the script is linked here -->
+    <script src="script.js"></script>
+    <script>
+        async function addToWishlist(productId){
+            try {
+                let res= await fetch('/user/addToWishlist',{
+                    method:'POST',
+                    headers:{"Content-Type":"application/json"},
+                    body:JSON.stringify({
+                        productId
+                    })
+                });
+                if(res.status===200){
+                    await Swal.fire({
+                        title:"sucess",
+                        text:"Successfully Added to the wishlist",
+                        icon:'success',
+                        showConfirmButton:true
+                    })
+                }
+                else if(res.status===400){
+                    await Swal.fire({
+                        title: 'Error',
+                        text: 'Product is already in the Wishlist',
+                        icon: 'error',
+                        showConfirmButton: true
+                    })
+                }
+                else{
+                    await Swal.fire({
+                        title: 'Error',
+                        text: 'Unable to add to the wishlist',
+                        icon: 'error',
+                        showConfirmButton: true
+                    })
+                }
+            } catch (error) {
+                console.log("Error something went wrong while adding to the wishlist",error.message)
+            }
+        }
+    </script>
+    
+    <script>
+        document.getElementById('submit-review').addEventListener("click", async () => {
+            console.log("Entered");
+        
+            // Get the values from the form inputs
+            const productId = document.getElementById('productId').value;
+            const reviewText = document.getElementById('comment-review-text').value;
+        
+            // Get the selected rating value
+            const ratingElements = document.getElementsByName('rating');
+            let rating;
+            for (const element of ratingElements) {
+                if (element.checked) {
+                    rating = element.value;
+                    break;
+                }
+            }
+        
+            // Create an object to hold the data
+            const reviewData = { rating, reviewText, productId };
+            console.log(reviewData);
+        
+            // Send the data in the body of a POST request
+            try {
+                const response = await fetch('/user/submit-review', {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': "application/json"
+                    },
+                    body: JSON.stringify(reviewData)
+                });
+        
+                if (response.ok) {
+                    Swal.fire({
+                        title:"Success",
+                        text:"Review Submitted Successfully",
+                        icon:"Success",
+                        showConfirmButton:"Ok"
+                    }).then(()=>{
+                        window.location.reload()
+                    })
+                } else {
+                    Swal.fire({
+                        title:"Error",
+                        text:"Something went wrong",
+                        icon:"error",
+                        showConfirmButton:"Ok"
+                    })  
+                }
+            } catch (error) {
+                Swal.fire({
+                        title:"Error",
+                        text:"Internal Server Error",
+                        icon:"error",
+                        showConfirmButton:"Ok"
+                    })  
+                console.error('Error:', error);
+            }
+        });
+        </script>
+        
+
+    <script>
+
+        
+        async function addProductCart(productId) {
+            try {
+                let res = await fetch('/user/add-to-cart', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        productId,
+                    
+                    })
+                });
+        
+                if (res.status === 400) {
+                    await Swal.fire({
+                        title: 'Error',
+                        text: 'Maximum quantity per person for this product has been reached',
+                        icon: 'error',
+                        showConfirmButton: true
+                    });
+                } else if (res.status === 409) {
+                    await Swal.fire({
+                        title: 'Error',
+                        text: 'Stock Limit Exceeded',
+                        icon: 'error',
+                        showConfirmButton: true
+                    });
+                } else if (res.status === 200) {
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: "bottom",
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true,
+                        background: "black",
+                        color: "white",
+                        didOpen: (toast) => {
+                            toast.addEventListener('mouseenter', Swal.stopTimer);
+                            toast.addEventListener('mouseleave', Swal.resumeTimer);
+                        }
+                    });
+        
+                    Toast.fire({
+                        icon: "success",
+                        title: "Added to cart"
+                    });
+                }
+            } catch (error) {
+                console.error('Error adding product to cart:', error);
+            }
+        }
+        </script>
+
+        
+    <script>
+    // JavaScript for handling user rating
+document.addEventListener('DOMContentLoaded', function() {
+    const averageRating = 3.5; // Fetch average rating from backend or set a default value
+    displayStars('averageRating', averageRating);
+
+    // Example: Assume user's rating is 4 stars
+    const userRating = 4;
+    displayStars('userStars', userRating); // Display user's rating
+
+    // Event listener for user rating
+    const stars = document.querySelectorAll('.fa-star');
+    stars.forEach(star => {
+        star.addEventListener('click', function() {
+            const rating = parseInt(this.getAttribute('data-rating'));
+            console.log('User selected rating:', rating);
+            // Send the rating to the backend to save
+            // Update the UI accordingly
+        });
+    });
+});
+
+// Function to display stars based on rating
+function displayStars(elementId, rating) {
+    const container = document.getElementById(elementId);
+    container.innerHTML = ''; // Clear existing stars
+
+    const fullStars = Math.floor(rating);
+    const halfStars = Math.ceil(rating - fullStars);
+    const emptyStars = 5 - fullStars - halfStars;
+
+    for (let i = 0; i < fullStars; i++) {
+        const star = document.createElement('i');
+        star.className = 'fa fa-star';
+        container.appendChild(star);
+    }
+
+    if (halfStars === 1) {
+        const halfStar = document.createElement('i');
+        halfStar.className = 'fa fa-star-half-o';
+        container.appendChild(halfStar);
+    }
+
+    for (let i = 0; i < emptyStars; i++) {
+        const star = document.createElement('i');
+        star.className = 'fa fa-star-o';
+        container.appendChild(star);
+    }
+}
+
+    document.getElementById('searchButton').addEventListener('click', function() {
+        var query = document.getElementById('searchInput').value;
+        if (query.trim() !== '') {
+            window.location.href = '/user/shop?q=' + encodeURIComponent(query);
+        }
+    });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    console.log('DOM fully loaded and parsed');
+    
+    const addReviewButton = document.getElementById('add-review-button');
+    const reviewFormContainer = document.querySelector('.review-form-container');
+
+    if (addReviewButton) {
+        console.log('Add review button found');
+    } else {
+        console.log('Add review button not found');
+    }
+
+    if (reviewFormContainer) {
+        console.log('Review form container found');
+    } else {
+        console.log('Review form container not found');
+    }
+
+    addReviewButton.addEventListener('click', function () {
+        console.log('Add a Review button clicked');
+        if (reviewFormContainer.style.display === 'none' || reviewFormContainer.style.display === '') {
+            reviewFormContainer.style.display = 'block';
+        } else {
+            reviewFormContainer.style.display = 'none';
+        }
+        console.log('Review form display style:', reviewFormContainer.style.display);
+    });
+});
+
+    </script>
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script src="assets/js/vendor/vendor.min.js"></script>
+    <script src="assets/js/plugins/plugins.min.js"></script>
+
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="/path/to/addProductCart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+</body>
+
+</html>

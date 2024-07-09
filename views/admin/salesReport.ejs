@@ -1,0 +1,288 @@
+<%- include('../partials/adminheader.ejs') %>
+    <main class="main-wrap">
+        <header class="main-header navbar">
+            <div class="col-search">
+                <!-- <form class="searchform">
+                    <div class="input-group">
+                        <input list="search_terms" type="text" class="form-control" placeholder="Search term">
+                        <button class="btn btn-light bg" type="button"> <i class="material-icons md-search"></i></button>
+                    </div>
+                    <datalist id="search_terms">
+                        <option value="Products">
+                        <option value="New orders">
+                        <option value="Apple iphone">
+                        <option value="Ahmed Hassan">
+                    </datalist>
+                </form> -->
+            </div>
+            <header class="header">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                </nav>
+            </header>
+            <div class="col-nav">
+                <button class="btn btn-icon btn-mobile me-auto" data-trigger="#offcanvas_aside"> <i class="material-icons md-apps"></i> </button>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link btn-icon" href="#">
+                            <i class="material-icons md-notifications animation-shake"></i>
+                            <span class="badge rounded-pill">3</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-icon darkmode" href="#"> <i class="material-icons md-nights_stay"></i> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="requestfullscreen nav-link btn-icon"><i class="material-icons md-cast"></i></a>
+                    </li>
+                    <li class="dropdown nav-item">
+                        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#" id="dropdownLanguage" aria-expanded="false"><i class="material-icons md-public"></i></a>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownLanguage">
+                            <a class="dropdown-item text-brand" href="#"><img src="adminassets/imgs/theme/flag-us.png" alt="English">English</a>
+                            <a class="dropdown-item" href="#"><img src="adminassets/imgs/theme/flag-fr.png" alt="Français">Français</a>
+                            <a class="dropdown-item" href="#"><img src="adminassets/imgs/theme/flag-jp.png" alt="Français">日本語</a>
+                            <a class="dropdown-item" href="#"><img src="adminassets/imgs/theme/flag-cn.png" alt="Français">中国人</a>
+                        </div>
+                    </li>
+                    <li class="dropdown nav-item">
+                        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#" id="dropdownAccount" aria-expanded="false"> <img class="img-xs rounded-circle" src="adminassets/imgs/people/avatar2.jpg" alt="User"></a>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownAccount">
+                            <a class="dropdown-item" href="#"><i class="material-icons md-perm_identity"></i>Edit Profile</a>
+                            <a class="dropdown-item" href="#"><i class="material-icons md-settings"></i>Account Settings</a>
+                            <a class="dropdown-item" href="#"><i class="material-icons md-account_balance_wallet"></i>Wallet</a>
+                            <a class="dropdown-item" href="#"><i class="material-icons md-receipt"></i>Billing</a>
+                            <a class="dropdown-item" href="#"><i class="material-icons md-help_outline"></i>Help center</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-danger" href="/admin/logout"><i class="material-icons md-exit_to_app"></i>Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <section class="content-main">
+            <div class="col-lg-6 col-md-12">
+                <h2 class="content-title card-title">Sales Report</h2>
+            </div>
+            <div class="card mb-4">
+                <header class="card-header">
+                    <div class="row gx-3">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6">
+                                <form action="/admin/salesReportSelectFilter" method="post">
+                                    <div class="row align-items-end">
+                                        <div class="col-6">
+                                            <label for="">Select</label>
+                                            <select class="form-select" name="timePeriod">
+                                                <option value="all">All</option>
+                                                <option value="day">Day</option>
+                                                <option value="week">Week</option>
+                                                <option value="month">Month</option>
+                                                <option value="year">Year</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4 col-4 text-center align-self-end">
+                                            <p>&nbsp;</p>
+                                            <button type="submit" id="generateExcel2" class="btn btn-secondary mb-2">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                <form action="/admin/fileterDateRange" method="post" id="dateFilter">
+                                    <div class="row">
+                                        <div class="col-md-4 col-4 text-center">
+                                            <p>Starting Date</p>
+                                            <input type="date" id="startdate" name="startingDate"  class="form-control" value="">
+                                            <div id="startingDate-error" class="error-message"></div>
+                                        </div>
+                                        <div class="col-md-4 col-4 text-center">
+                                            <p>Ending Date</p>
+                                            <input type="date" id="enddate" name="endingDate" class="form-control" value="">
+                                            <div id="endingDate-error" class="error-message"></div>
+                                        </div>
+                                        <div class="col-md-4 col-4 text-center align-self-end">
+                                            <p>&nbsp;</p>
+                                            <button type="submit" id="generateExcel2" class="btn btn-secondary mb-2">Search</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </div>
+        
+            <div class="card">             
+                <div class="card-body">
+                    <div class="col-md-13">
+                        <div class="table-responsive">
+                            <div id="salesTable">
+                                <table  class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th class="col-md-1 text-center">#</th>
+                                            <th class="col-md-1 text-center">Order ID</th>
+                                            <th class="col-md-2 text-center">Name</th>
+                                            <th class="col-md-3 text-center">Product</th>
+                                            <th class="col-md-1 text-center">Date</th>
+                                            <th class="col-md-2 text-center">Payment</th>
+                                            <th class="col-md-1 text-center">Status</th>
+                                            <th class="col-md-1 text-center">Coupon</th>
+                                            <th class="col-md-1 text-center">Sales Price</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <h5 class="mb-2" style="color: green;">Total count : <%= salesData.length %></h5>
+                                        <% if(locals.salesData){%>
+                                            <% for(let i=0; i<salesData.length; i++){%>
+                                                <tr>
+                                                    <td class="col-md-1 text-center"><%= i+1 %></td>
+                                                    <td class="col-md-1 text-center"><%= salesData[i].oId %></td>
+                                                    <td class="col-md-2 text-center"><%= salesData[i].user.name %></td>
+                                                    <td class="col-md-3 text-center"><%= salesData[i].productNew.name %></td>
+                                                    <td class="col-md-1 text-center"><%= salesData[i].orderDate.toLocaleDateString() %></td>
+                                                    <td class="col-md-2 text-center"><%= salesData[i].paymentMethod %></td>
+                                                    <td class="col-md-1 text-center"><%= salesData[i].status %></td>
+                                                    <td class="col-md-1 text-center">
+                                                        <% if(salesData[i].coupon){%>
+                                                            <p style="color: green;">Applied <span>
+                                                        <%}else{%>
+                                                            <p style="color: red;">Not Applied</p>
+                                                        <%} %>
+                                                    </td>
+                                                    <td class="col-md-1 text-center"><%= salesData[i].items.quantity * salesData[i].productNew.discountPrice %></td>
+                                                </tr>
+                                            <% } %>
+                                        <% } %>
+                                    </tbody>
+                                   
+                        
+                                </table>
+                                <div class="totalPrice ml-20">
+                                    <h4><span class="text-primary">Overall Sales Count</span> : <%= salesData.length %></h4>
+                                    <h4><span class="text-primary">Total Stock Price</span> : ₹<%= totalRegularPrice %></h4>
+                                    <h4><span class="text-primary">Total Order Amount</span> : ₹<%= totalSalesPrice.toFixed(0)%></h4>
+                                    <h4><span class="text-primary">Total Discount Given</span> : ₹<%= totalDiscountPrice.toFixed(0)  %></h4>
+                                </div>
+                            </div>
+
+                            <div class="content-header row d-flex justify-content-between align-items-center">
+                                <div class="col-lg-6 col-md-12 pl-30">
+                                    <a href="#" id="createSalesReport" class="btn btn-primary mb-2" onclick="downloadPdf()">Download SR in PDF</a>
+                                    <a href="#" id="generateExcel" class="btn btn-success mb-2" onclick="downloadExcel()">Download SR in Excel</a>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="main-footer font-xs">
+            <div class="row pb-30 pt-15">
+                <div class="col-sm-6">
+                    <script>
+                    document.write(new Date().getFullYear())
+                    </script> ©, Evara - HTML Ecommerce Template .
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-sm-end">
+                        All rights reserved
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src="adminassets/js/vendors/jquery-3.6.0.min.js"></script>
+    <script src="adminassets/js/vendors/bootstrap.bundle.min.js"></script>
+    <script src="adminassets/js/vendors/select2.min.js"></script>
+    <script src="adminassets/js/vendors/perfect-scrollbar.js"></script>
+    <script src="adminassets/js/vendors/jquery.fullscreen.min.js"></script>
+    <!-- Main Script -->
+    <script src="adminassets/js/main.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.0/xlsx.full.min.js"></script>
+
+<script>
+    document.getElementById("dateFilter").addEventListener("submit", function(event) {
+        event.preventDefault();
+        if (validateAndSubmit()) {
+            this.submit();
+        }
+      });
+
+      function validateAndSubmit() {
+        if (validateForm()) {
+            return true;
+        } else {
+            return false;
+        }
+      }
+
+
+      function validateForm() {
+        resetErrorMessage();
+      console.log("Its start to working");
+        let isValid = true;
+        
+        const startingDate = document.getElementById("startdate").value.trim();
+        const endingDate = document.getElementById("enddate").value.trim();
+
+        if(startingDate === ""){
+            displayErrorMessage("startingDate-error","Enter Starting date");
+            isValid = false
+        }
+        
+        if(endingDate === ""){
+            displayErrorMessage("endingDate-error","Enter Ending date");
+            isValid = false;
+        }else if(endingDate < startingDate){
+            displayErrorMessage("endingDate-error","Should greater than starting date");
+            isValid = false
+        }
+      
+        return isValid;
+      }
+      function displayErrorMessage(elementId, message) {
+        var errorElement = document.getElementById(elementId);
+        errorElement.innerText = message;
+        errorElement.style.display = "block";
+        errorElement.style.color = "red";
+      }
+      
+      function resetErrorMessage() {
+        var errorElements = document.querySelectorAll(".error-message");
+        errorElements.forEach(function(element) {
+            element.innerText = "";
+            element.style.display = "none";
+        });
+      }
+
+</script>
+
+<script>
+    function downloadPdf() {
+        const salesReport = document.getElementById("salesTable");
+        const opt = {
+            margin: 1,
+            filename: 'sales_report.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+        html2pdf().from(salesReport).set(opt).save();
+    }
+
+    function downloadExcel() {
+        const salesReport = document.getElementById("salesTable");
+        const ws = XLSX.utils.table_to_sheet(salesReport);
+        const wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, "Sales Report");
+        XLSX.writeFile(wb, "sales_report.xlsx");
+    }
+</script>
+</body>
+
+</html>
