@@ -71,6 +71,6 @@ app.use((err, req, res, next) => {
 const port = process.env.PORT || 3000;
 app.set('port', port);
 const server = http.createServer(app);
-server.listen(port, () => console.log(`Server is listening on port ${port}`));
+server.listen(port,'0.0.0.0', () => console.log(`Server is listening on port ${port}`));
 
 module.exports = app;
